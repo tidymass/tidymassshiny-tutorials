@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Install tidymass shiny APP | A Minimal Book Example</title>
+  <title>Chapter 4 Start one project | A Minimal Book Example</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Install tidymass shiny APP | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 4 Start one project | A Minimal Book Example" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Install tidymass shiny APP | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 4 Start one project | A Minimal Book Example" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="hello-bookdown.html"/>
-<link rel="next" href="start-one-project.html"/>
+<link rel="prev" href="install-tidymass-shiny-app.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -188,38 +188,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="install-tidymass-shiny-app" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Install tidymass shiny APP<a href="install-tidymass-shiny-app.html#install-tidymass-shiny-app" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="r-package" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> R package<a href="install-tidymass-shiny-app.html#r-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can find the source code of the package <a href="https://github.com/tidymass/tidymass_shiny">here</a>.</p>
-<p>Use the below code to install the package.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="install-tidymass-shiny-app.html#cb3-1" tabindex="-1"></a><span class="do">##&gt; for chinese users:</span></span>
-<span id="cb3-2"><a href="install-tidymass-shiny-app.html#cb3-2" tabindex="-1"></a><span class="do">##&gt; options(&quot;repos&quot; = c(CRAN=&quot;https://mirrors.tuna.tsinghua.edu.cn/CRAN/&quot;))</span></span>
-<span id="cb3-3"><a href="install-tidymass-shiny-app.html#cb3-3" tabindex="-1"></a><span class="do">##&gt; options(BioC_mirror=&quot;https://mirrors.westlake.edu.cn/bioconductor&quot;)</span></span>
-<span id="cb3-4"><a href="install-tidymass-shiny-app.html#cb3-4" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="install-tidymass-shiny-app.html#cb3-5" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="install-tidymass-shiny-app.html#cb3-6" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;remotes&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;remotes&#39;</span>);</span>
-<span id="cb3-7"><a href="install-tidymass-shiny-app.html#cb3-7" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;tidyverse&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>);</span>
-<span id="cb3-8"><a href="install-tidymass-shiny-app.html#cb3-8" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;tidymass&#39;</span>)) {</span>
-<span id="cb3-9"><a href="install-tidymass-shiny-app.html#cb3-9" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">&quot;https://www.tidymass.org/tidymass-packages/install_tidymass.txt&quot;</span>);</span>
-<span id="cb3-10"><a href="install-tidymass-shiny-app.html#cb3-10" tabindex="-1"></a>  <span class="fu">install_tidymass</span>(<span class="at">from =</span> <span class="st">&quot;tidymass.org&quot;</span>)</span>
-<span id="cb3-11"><a href="install-tidymass-shiny-app.html#cb3-11" tabindex="-1"></a>};</span>
-<span id="cb3-12"><a href="install-tidymass-shiny-app.html#cb3-12" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;shinyFiles&#39;</span>)) remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;thomasp85/shinyFiles&#39;</span>);</span>
-<span id="cb3-13"><a href="install-tidymass-shiny-app.html#cb3-13" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;shinyWidgets&#39;</span>)) remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;dreamRs/shinyWidgets&quot;</span>);</span>
-<span id="cb3-14"><a href="install-tidymass-shiny-app.html#cb3-14" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;shiny&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;shiny&#39;</span>);</span>
-<span id="cb3-15"><a href="install-tidymass-shiny-app.html#cb3-15" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;bsicons&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;bsicons&#39;</span>);</span>
-<span id="cb3-16"><a href="install-tidymass-shiny-app.html#cb3-16" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;bslib&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;bslib&#39;</span>);</span>
-<span id="cb3-17"><a href="install-tidymass-shiny-app.html#cb3-17" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;plotly&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;plotly&#39;</span>);</span>
-<span id="cb3-18"><a href="install-tidymass-shiny-app.html#cb3-18" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;colourpicker&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;colourpicker&#39;</span>);</span>
-<span id="cb3-19"><a href="install-tidymass-shiny-app.html#cb3-19" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;plantmdb&#39;</span>)) remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;xuebinzhang-lab/plantmdb&quot;</span>)  <span class="do">## plant metabolomics database. for test use.</span></span>
-<span id="cb3-20"><a href="install-tidymass-shiny-app.html#cb3-20" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;tidymassshiny&#39;</span>)) remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;tidymass/tidymass_shiny&#39;</span>)</span></code></pre></div>
-</div>
-<div id="start-tidymass-shiny-app" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Start tidymass shiny APP<a href="install-tidymass-shiny-app.html#start-tidymass-shiny-app" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="install-tidymass-shiny-app.html#cb4-1" tabindex="-1"></a><span class="fu">run_tidymass_shiny</span>()</span></code></pre></div>
-<p>The tidymass shiny App will start like below shows:</p>
-<p><img src="figures/figure1.png" /></p>
+<div id="start-one-project" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Start one project<a href="start-one-project.html#start-one-project" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="r-package-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> R package<a href="start-one-project.html#r-package-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -228,8 +200,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="hello-bookdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="start-one-project.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="install-tidymass-shiny-app.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -260,7 +232,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-install.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-begining.Rmd",
 "text": "Edit"
 },
 "history": {
