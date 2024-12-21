@@ -1,7 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
-date: "`r Sys.Date()`"
+title: "Tutorials for tidymass shinyapp"
+
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -15,9 +14,11 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
-# About
+# Installation
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+**tidymass shinyapp** (https://github.com/tidymass/tidymass_shiny) is a user-friendly web application for **tidymass** (https://www.tidymass.org/) that requires little or no programming experience.
+
+The app can only be installed via code now, and we will introduce how to do that step by step in this chapter.
 
 ## Usage 
 

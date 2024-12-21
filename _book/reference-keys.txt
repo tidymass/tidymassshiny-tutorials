@@ -1,4 +1,4 @@
-about
+installation
 usage
 render-book
 preview-book
