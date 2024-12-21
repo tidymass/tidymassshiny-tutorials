@@ -146,8 +146,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Installation</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preparations"><i class="fa fa-check"></i><b>1.1</b> Preparations</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#install-tidymass-shinyapp"><i class="fa fa-check"></i><b>1.2</b> Install tidymass shinyapp</a></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
@@ -193,14 +193,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 1</span> Installation<a href="index.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><strong>tidymass shinyapp</strong> (<a href="https://github.com/tidymass/tidymass_shiny" class="uri">https://github.com/tidymass/tidymass_shiny</a>) is a user-friendly web application for <strong>tidymass</strong> (<a href="https://www.tidymass.org/" class="uri">https://www.tidymass.org/</a>) that requires little or no programming experience.</p>
 <p>The app can only be installed via code now, and we will introduce how to do that step by step in this chapter.</p>
-<div id="usage" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Usage<a href="index.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each <strong>bookdown</strong> chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter <em>must</em> start with a first-level heading: <code># A good chapter</code>, and can contain one (and only one) first-level heading.</p>
-<p>Use second-level and higher headings within chapters like: <code>## A short section</code> or <code>### An even shorter section</code>.</p>
-<p>The <code>index.Rmd</code> file is required, and is also your first book chapter. It will be the homepage when you render the book.</p>
+<div id="preparations" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Preparations<a href="index.html#preparations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To begin with, you need to install R and Rstudio, both of which can be free downloaded from official websites.</p>
+<p>If you have installed them before, please ensure that R version &gt; 4.1 as tidymass required, ohterwise download and install the <a href="https://cran.r-project.org/mirrors.html">latest version of R</a>.</p>
+<p><strong>Install R</strong></p>
+<p>Download <a href="https://www.r-project.org/">R</a> and install it.</p>
+<p><img src="figures/R_install.png" /></p>
+<p><strong>Install Rstudio</strong></p>
+<p>Download <a href="https://posit.co/download/rstudio-desktop/#download">Rstudio</a> and install it.</p>
+<p><img src="figures/Rstudio_install.png" /></p>
+<p><strong>Open the Rstudio</strong></p>
+<p><img src="figures/Rstudio.png" /></p>
+<p><strong>Setting up the suitable Mirror</strong></p>
+<p>You may set up the suitable mirror to accelerate R package downloads.</p>
+<p>Click “Tools” in the Rstudio, then click “Global options” and select “Packages”. You may select mirror from TUNA Team if you are users from China.</p>
+<p><img src="figures/mirror.png" /></p>
+<p><strong>Install tidymass</strong></p>
+<p>You are recommended to install <a href="https://www.tidymass.org/">tidymss</a> according to the steps on the official website.</p>
 </div>
-<div id="render-book" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Render book<a href="index.html#render-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="install-tidymass-shinyapp" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Install tidymass shinyapp<a href="index.html#install-tidymass-shinyapp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can render the HTML version of this example book without changing anything:</p>
 <ol style="list-style-type: decimal">
 <li><p>Find the <strong>Build</strong> pane in the RStudio IDE, and</p></li>

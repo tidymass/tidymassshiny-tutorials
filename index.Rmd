@@ -20,15 +20,42 @@ github-repo: rstudio/bookdown-demo
 
 The app can only be installed via code now, and we will introduce how to do that step by step in this chapter.
 
-## Usage 
+## Preparations
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+To begin with, you need to install R and Rstudio, both of which can be free downloaded from official websites.
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+If you have installed them before, please ensure that R version > 4.1 as tidymass required, ohterwise download and install the [latest version of R](https://cran.r-project.org/mirrors.html).
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+**Install R**
 
-## Render book
+Download [R](https://www.r-project.org/) and install it. 
+
+![](figures/R_install.png)
+
+**Install Rstudio**
+
+Download [Rstudio](https://posit.co/download/rstudio-desktop/#download) and install it.
+
+![](figures/Rstudio_install.png)
+
+**Open the Rstudio**
+
+![](figures/Rstudio.png)
+
+**Setting up the suitable Mirror**
+
+You may set up the suitable mirror to accelerate R package downloads.
+
+Click "Tools" in the Rstudio, then click "Global options" and select "Packages". You may select mirror from TUNA Team if you are users from China.
+
+![](figures/mirror.png)
+
+**Install tidymass**
+
+You are recommended to install [tidymass](https://www.tidymass.org/) according to the steps on the official website.
+
+
+## Install tidymass shinyapp
 
 You can render the HTML version of this example book without changing anything:
 
