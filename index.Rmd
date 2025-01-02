@@ -57,32 +57,30 @@ You are recommended to install [tidymass](https://www.tidymass.org/) according t
 
 ## Install tidymass shinyapp
 
-You can render the HTML version of this example book without changing anything:
-
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
+To install the app, you are recommended to run the following code.
 
 ```{r, eval=FALSE}
-bookdown::render_book()
+if (!require('remotes')) install.packages('remotes');
+if (!require('tidyverse')) install.packages('tidyverse');
+if (!require('tidymass')) {
+  source("https://www.tidymass.org/tidymass-packages/install_tidymass.txt");
+  install_tidymass(from = "tidymass.org")
+};
+if (!require('shinyFiles')) remotes::install_github('thomasp85/shinyFiles');
+if (!require('shinyWidgets')) remotes::install_github("dreamRs/shinyWidgets");
+if (!require('shiny')) install.packages('shiny');
+if (!require('bsicons')) install.packages('bsicons');
+if (!require('bslib')) install.packages('bslib');
+if (!require('plotly')) install.packages('plotly');
+if (!require('colourpicker')) install.packages('colourpicker');
+if (!require('plantmdb')) remotes::install_github("xuebinzhang-lab/plantmdb")  ## plant metabolomics database. for test use.
+if (!require('tidymassshiny')) remotes::install_github('tidymass/tidymass_shiny')
+
 ```
 
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+To update the app to the newest version, you can run the code.
 
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-```{r eval=FALSE}
-bookdown::serve_book()
+```{r, eval=FALSE}
+remotes::install_github('tidymass/tidymass_shiny')
 ```
 
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
