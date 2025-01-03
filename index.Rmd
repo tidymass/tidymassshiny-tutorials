@@ -78,6 +78,20 @@ if (!require('tidymassshiny')) remotes::install_github('tidymass/tidymass_shiny'
 
 ```
 
+To start the app, run the code.
+
+```{r, eval=FALSE}
+library(tidyverse)
+library(tidymass)
+library(tidymassshiny)
+library(plantmdb) ## for test use
+run_tidymass_shiny()
+```
+
+You should be able to see:
+
+![](figures/shinyapp.png)
+
 To update the app to the newest version, you can run the code.
 
 ```{r, eval=FALSE}
