@@ -1,8 +1,8 @@
 installation
 preparations
 install-tidymass-shinyapp
-hello-bookdown
-a-section
+upstream-data-processing
+methods-to-upload-the-files
 install-tidymass-shiny-app
 r-package
 start-tidymass-shiny-app
