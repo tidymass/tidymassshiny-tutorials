@@ -50,11 +50,6 @@ Click "Tools" in the Rstudio, then click "Global options" and select "Packages".
 
 ![](figures/mirror.png)
 
-**Install tidymass**
-
-You are recommended to install [tidymass](https://www.tidymass.org/) according to the steps on the official website.
-
-
 ## Install tidymass shinyapp
 
 To install the app, you are recommended to run the following code.
