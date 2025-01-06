@@ -21,5 +21,37 @@ To begin with, you need to set up the working directory and upload the required 
 
 ![](figures/object_upload.png)
 
+## Project initiate
+
+Here are the steps you need to follow to initiate the project:
+
+1. Set working directory
+2. Upload sample_info.csv file
+3. You may click the dropdown button and adjust the column names if there are any changes for them.
+4. Click "INITIALIZE PROJECT" button and check the sample information.
+
+![](figures/project_initiate.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
