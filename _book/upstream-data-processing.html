@@ -89,6 +89,7 @@ set in the _output.yml file.</p>" />
 <ul>
 <li class="chapter" data-level="2.1" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#methods-to-upload-the-files"><i class="fa fa-check"></i><b>2.1</b> Methods to upload the files</a></li>
 <li class="chapter" data-level="2.2" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#project-initiate"><i class="fa fa-check"></i><b>2.2</b> Project initiate</a></li>
+<li class="chapter" data-level="2.3" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-import"><i class="fa fa-check"></i><b>2.3</b> Data import</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="install-tidymass-shiny-app.html"><a href="install-tidymass-shiny-app.html"><i class="fa fa-check"></i><b>3</b> Install tidymass shiny APP</a>
 <ul>
@@ -121,7 +122,7 @@ set in the _output.yml file.</p>" />
             <section class="normal" id="section-">
 <div id="upstream-data-processing" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Upstream data processing<a href="upstream-data-processing.html#upstream-data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>To perform multiple analysis with tidymass shinyapp, you need to upload files first, the demo data can be downloaeded <a href="https://drive.google.com/file/d/1bVDtNdK2gKZd39CpeXOStS2-WGDOStvs/view?usp=sharing">here</a>.</p>
+<p>To perform multiple analysis with tidymass shinyapp, you need to upload files first, the demo data can be downloaeded <a href="https://drive.google.com/file/d/10OmQjZApoqJcd163X5C67pij2yZGWHnF/view?usp=sharing">here</a>.</p>
 <p><img src="figures/demo_data.png" /></p>
 <div id="methods-to-upload-the-files" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Methods to upload the files<a href="upstream-data-processing.html#methods-to-upload-the-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -144,6 +145,22 @@ set in the _output.yml file.</p>" />
 <li>Click “INITIALIZE PROJECT” button and check the sample information.</li>
 </ol>
 <p><img src="figures/project_initiate.png" /></p>
+</div>
+<div id="data-import" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Data import<a href="upstream-data-processing.html#data-import" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Upload Ms file</strong></p>
+<p>Before import the data, please ensure that the files are well anranged. Here is an example:</p>
+<p><img src="figures/MS1_files.png" /></p>
+<p>Click the dropdown button <strong>Data import</strong> and select <strong>Start with MS file</strong>.</p>
+<p><img src="figures/MS_start.png" /></p>
+<p>Then click <strong>SELECT MS1 FOLDER</strong> and choose the MS1 folder. Next, click <strong>CHECK INPUT FILE</strong> and you will see the number of files you have just uploaded.</p>
+<p><img src="figures/select_ms.png" /></p>
+<p>If the files are ready for analysis, you can begin to optimize peak picking parameters. The first step is to choose the ppmCut.</p>
+<p><img src="figures/optimization_part1.png" /></p>
+<p>And the second step is to run with the ppmCut. (need to scroll down to find the button)</p>
+<p><img src="figures/optimization_part2.png" /></p>
+<p>Finally, click <strong>START PEAK PICKING</strong> and get the results.</p>
+<p><img src="figures/peak_picking.png" /></p>
 
 </div>
 </div>

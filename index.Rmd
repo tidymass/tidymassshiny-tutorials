@@ -61,6 +61,7 @@ To install the app, you are recommended to run the following code.
 
 ```{r, eval=FALSE}
 if (!require('remotes')) install.packages('remotes');
+if (!require('writexl')) install.packages('writexl');
 if (!require('tidyverse')) install.packages('tidyverse');
 if (!require('tidymass')) {
   source("https://www.tidymass.org/tidymass-packages/install_tidymass.txt");

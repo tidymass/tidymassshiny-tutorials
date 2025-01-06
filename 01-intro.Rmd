@@ -1,6 +1,6 @@
 # Upstream data processing
 
-To perform multiple analysis with tidymass shinyapp, you need to upload files first, the demo data can be downloaeded [here](https://drive.google.com/file/d/1bVDtNdK2gKZd39CpeXOStS2-WGDOStvs/view?usp=sharing).
+To perform multiple analysis with tidymass shinyapp, you need to upload files first, the demo data can be downloaeded [here](https://drive.google.com/file/d/10OmQjZApoqJcd163X5C67pij2yZGWHnF/view?usp=sharing).
 
 ![](figures/demo_data.png)
 
@@ -32,17 +32,34 @@ Here are the steps you need to follow to initiate the project:
 
 ![](figures/project_initiate.png)
 
+## Data import
+
+**Upload Ms file**
+
+Before import the data, please ensure that the files are well anranged. Here is an example:
+
+![](figures/MS1_files.png)
+
+Click the dropdown button **Data import** and select **Start with MS file**.
+
+![](figures/MS_start.png)
 
 
+Then click **SELECT MS1 FOLDER** and choose the MS1 folder. Next, click **CHECK INPUT FILE** and you will see the number of files you have just uploaded.
 
+![](figures/select_ms.png)
 
+If the files are ready for analysis, you can begin to optimize peak picking parameters. The first step is to choose the ppmCut.
 
+![](figures/optimization_part1.png)
 
+And the second step is to run with the ppmCut. (need to scroll down to find the button)
 
+![](figures/optimization_part2.png)
 
+Finally, click **START PEAK PICKING** and get the results.
 
-
-
+![](figures/peak_picking.png)
 
 
 
