@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Upstream data processing | Tutorials for tidymass shinyapp</title>
+  <title>2 Upstream data processing | Tutorials for tidymass shinyapp</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Upstream data processing | Tutorials for tidymass shinyapp" />
+  <meta property="og:title" content="2 Upstream data processing | Tutorials for tidymass shinyapp" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Upstream data processing | Tutorials for tidymass shinyapp" />
+  <meta name="twitter:title" content="2 Upstream data processing | Tutorials for tidymass shinyapp" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -87,9 +87,10 @@ set in the _output.yml file.</p>" />
 </ul></li>
 <li class="chapter" data-level="2" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html"><i class="fa fa-check"></i><b>2</b> Upstream data processing</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#methods-to-upload-the-files"><i class="fa fa-check"></i><b>2.1</b> Methods to upload the files</a></li>
-<li class="chapter" data-level="2.2" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#project-initiate"><i class="fa fa-check"></i><b>2.2</b> Project initiate</a></li>
-<li class="chapter" data-level="2.3" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-import"><i class="fa fa-check"></i><b>2.3</b> Data import</a></li>
+<li class="chapter" data-level="2.1" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-format-converter"><i class="fa fa-check"></i><b>2.1</b> Data format converter</a></li>
+<li class="chapter" data-level="2.2" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#methods-to-upload-the-files"><i class="fa fa-check"></i><b>2.2</b> Methods to upload the files</a></li>
+<li class="chapter" data-level="2.3" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#project-initiate"><i class="fa fa-check"></i><b>2.3</b> Project initiate</a></li>
+<li class="chapter" data-level="2.4" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-import"><i class="fa fa-check"></i><b>2.4</b> Data import</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="install-tidymass-shiny-app.html"><a href="install-tidymass-shiny-app.html"><i class="fa fa-check"></i><b>3</b> Install tidymass shiny APP</a>
 <ul>
@@ -121,13 +122,20 @@ set in the _output.yml file.</p>" />
 
             <section class="normal" id="section-">
 <div id="upstream-data-processing" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Upstream data processing<a href="upstream-data-processing.html#upstream-data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">2</span> Upstream data processing<a href="upstream-data-processing.html#upstream-data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>To perform multiple analysis with tidymass shinyapp, you need to upload files first, the demo data can be downloaeded <a href="https://drive.google.com/file/d/10OmQjZApoqJcd163X5C67pij2yZGWHnF/view?usp=sharing">here</a>.</p>
 <p><img src="figures/demo_data.png" /></p>
-<div id="methods-to-upload-the-files" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Methods to upload the files<a href="upstream-data-processing.html#methods-to-upload-the-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-format-converter" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Data format converter<a href="upstream-data-processing.html#data-format-converter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If your is in raw format, you may first convert it to .mzML or .mzXML format using <a href="https://proteowizard.sourceforge.io">ProteoWizard</a>. Please note that ProteoWizard only support Windows OS, you may consider <a href="https://massconverter.tidymass.org">massconverter</a> if you don’t use Windows OS.</p>
+<p>You can refer to the following parameter settings for ProteoWizard.</p>
+<p><img src="figures/ProteoWizard.png" /></p>
+</div>
+<div id="methods-to-upload-the-files" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Methods to upload the files<a href="upstream-data-processing.html#methods-to-upload-the-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To begin with, you need to set up the working directory and upload the required files. Here we have three options to upload the files.</p>
-<p><strong>Start with Ms file</strong>: If your data is in raw format, you may first convert it to .mgf format using HPC_tidymass. Then click on ‘Start with Ms file’ to upload the file.</p>
+<p><strong>Start with Ms file</strong>:
+You can click on ‘Start with Ms file’ to upload the file.</p>
 <p><img src="figures/select_ms.png" />
 <strong>Start with table file</strong>: If your data is a post-peak metabolite expression matrix, you can click on the ‘Start with table file’ button to upload the data. The sample table is as follows, and the first four columns must exist, with column names not to be changed.</p>
 <p><img src="figures/table_upload.png" /></p>
@@ -135,8 +143,8 @@ set in the _output.yml file.</p>" />
 <p><img src="figures/object_page.png" /></p>
 <p><img src="figures/object_upload.png" /></p>
 </div>
-<div id="project-initiate" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Project initiate<a href="upstream-data-processing.html#project-initiate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="project-initiate" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Project initiate<a href="upstream-data-processing.html#project-initiate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here are the steps you need to follow to initiate the project:</p>
 <ol style="list-style-type: decimal">
 <li>Set working directory</li>
@@ -146,8 +154,8 @@ set in the _output.yml file.</p>" />
 </ol>
 <p><img src="figures/project_initiate.png" /></p>
 </div>
-<div id="data-import" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Data import<a href="upstream-data-processing.html#data-import" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-import" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Data import<a href="upstream-data-processing.html#data-import" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Upload Ms file</strong></p>
 <p>Before import the data, please ensure that the files are well anranged. Here is an example:</p>
 <p><img src="figures/MS1_files.png" /></p>

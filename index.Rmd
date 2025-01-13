@@ -42,6 +42,7 @@ Download [Rstudio](https://posit.co/download/rstudio-desktop/#download) and inst
 
 ![](figures/Rstudio.png)
 
+
 **Setting up the suitable Mirror**
 
 You may set up the suitable mirror to accelerate R package downloads.

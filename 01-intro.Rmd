@@ -4,11 +4,21 @@ To perform multiple analysis with tidymass shinyapp, you need to upload files fi
 
 ![](figures/demo_data.png)
 
+
+## Data format converter
+
+If your data is in raw format, you may first convert it to .mzML or .mzXML format using [ProteoWizard](https://proteowizard.sourceforge.io). Please note that ProteoWizard only support Windows OS, you may consider [massconverter](https://massconverter.tidymass.org) if you don't use Windows OS.
+
+You can refer to the following parameter settings for ProteoWizard.
+
+![](figures/ProteoWizard.png)
+
 ## Methods to upload the files
 
 To begin with, you need to set up the working directory and upload the required files. Here we have three options to upload the files.
 
-**Start with Ms file**: If your data is in raw format, you may first convert it to .mgf format using HPC_tidymass. Then click on ‘Start with Ms file’ to upload the file.
+**Start with Ms file**: 
+You can click on ‘Start with Ms file’ to upload the file.
 
 ![](figures/select_ms.png)
 **Start with table file**: If your data is a post-peak metabolite expression matrix, you can click on the ‘Start with table file’ button to upload the data. The sample table is as follows, and the first four columns must exist, with column names not to be changed. 
