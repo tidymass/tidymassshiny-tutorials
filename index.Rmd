@@ -24,17 +24,17 @@ The app can only be installed via code now, and we will introduce how to do that
 
 To begin with, you need to install R and Rstudio, both of which can be free downloaded from official websites.
 
-If you have installed them before, please ensure that R version > 4.1 as tidymass required, ohterwise download and install the [latest version of R](https://cran.r-project.org/mirrors.html).
+If you have installed them before, please ensure that R version > 4.1 as tidymass required, ohterwise download and install the [latest version of R](https://cran.r-project.org/mirrors.html){target="_blank"}.
 
 **Install R**
 
-Download [R](https://www.r-project.org/) and install it. 
+Download [R](https://www.r-project.org/){target="_blank"} and install it. 
 
 ![](figures/R_install.png)
 
 **Install Rstudio**
 
-Download [Rstudio](https://posit.co/download/rstudio-desktop/#download) and install it.
+Download [Rstudio](https://posit.co/download/rstudio-desktop/#download){target="_blank"} and install it.
 
 ![](figures/Rstudio_install.png)
 
@@ -51,9 +51,13 @@ Click "Tools" in the Rstudio, then click "Global options" and select "Packages".
 
 ![](figures/mirror.png)
 
-## Install tidymass shinyapp
+## Methods to install tidymass shinyapp
 
-To install the app, you are recommended to run the following code.
+Here we provide three different methods to install tidymass shinyapp: **R**, **Docker** and **Server**.
+
+**Install with R**
+
+To install the app with R, you are recommended to run the following code.
 
 ```{r, eval=FALSE}
 if (!require('remotes')) install.packages('remotes');
@@ -94,4 +98,11 @@ To update the app to the newest version, you can run the code.
 ```{r, eval=FALSE}
 remotes::install_github('tidymass/tidymass_shiny')
 ```
+
+**Install with Docker**
+
+
+**Install with Server**
+
+
 

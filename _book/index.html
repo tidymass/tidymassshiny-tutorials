@@ -147,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Installation</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preparations"><i class="fa fa-check"></i><b>1.1</b> Preparations</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#install-tidymass-shinyapp"><i class="fa fa-check"></i><b>1.2</b> Install tidymass shinyapp</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#methods-to-install-tidymass-shinyapp"><i class="fa fa-check"></i><b>1.2</b> Methods to install tidymass shinyapp</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html"><i class="fa fa-check"></i><b>2</b> Upstream data processing</a>
 <ul>
@@ -155,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#methods-to-upload-the-files"><i class="fa fa-check"></i><b>2.2</b> Methods to upload the files</a></li>
 <li class="chapter" data-level="2.3" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#project-initiate"><i class="fa fa-check"></i><b>2.3</b> Project initiate</a></li>
 <li class="chapter" data-level="2.4" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-import"><i class="fa fa-check"></i><b>2.4</b> Data import</a></li>
-<li class="chapter" data-level="2.5" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-exploration-and-data-quality-assessment"><i class="fa fa-check"></i><b>2.5</b> Data exploration and data quality assessment</a></li>
+<li class="chapter" data-level="2.5" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-exploration-and-data-quaily-assessment"><i class="fa fa-check"></i><b>2.5</b> Data exploration and data quaily assessment</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="install-tidymass-shiny-app.html"><a href="install-tidymass-shiny-app.html"><i class="fa fa-check"></i><b>3</b> Install tidymass shiny APP</a>
 <ul>
@@ -196,12 +196,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="preparations" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Preparations<a href="index.html#preparations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To begin with, you need to install R and Rstudio, both of which can be free downloaded from official websites.</p>
-<p>If you have installed them before, please ensure that R version &gt; 4.1 as tidymass required, ohterwise download and install the <a href="https://cran.r-project.org/mirrors.html">latest version of R</a>.</p>
+<p>If you have installed them before, please ensure that R version &gt; 4.1 as tidymass required, ohterwise download and install the <a href="https://cran.r-project.org/mirrors.html" target="_blank">latest version of R</a>.</p>
 <p><strong>Install R</strong></p>
-<p>Download <a href="https://www.r-project.org/">R</a> and install it.</p>
+<p>Download <a href="https://www.r-project.org/" target="_blank">R</a> and install it.</p>
 <p><img src="figures/R_install.png" /></p>
 <p><strong>Install Rstudio</strong></p>
-<p>Download <a href="https://posit.co/download/rstudio-desktop/#download">Rstudio</a> and install it.</p>
+<p>Download <a href="https://posit.co/download/rstudio-desktop/#download" target="_blank">Rstudio</a> and install it.</p>
 <p><img src="figures/Rstudio_install.png" /></p>
 <p><strong>Open the Rstudio</strong></p>
 <p><img src="figures/Rstudio.png" /></p>
@@ -210,9 +210,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Click “Tools” in the Rstudio, then click “Global options” and select “Packages”. You may select mirror from TUNA Team if you are users from China.</p>
 <p><img src="figures/mirror.png" /></p>
 </div>
-<div id="install-tidymass-shinyapp" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Install tidymass shinyapp<a href="index.html#install-tidymass-shinyapp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To install the app, you are recommended to run the following code.</p>
+<div id="methods-to-install-tidymass-shinyapp" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Methods to install tidymass shinyapp<a href="index.html#methods-to-install-tidymass-shinyapp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here we provide three different methods to install tidymass shinyapp: <strong>R</strong>, <strong>Docker</strong> and <strong>Server</strong>.</p>
+<p><strong>Install with R</strong></p>
+<p>To install the app with R, you are recommended to run the following code.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;remotes&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;remotes&#39;</span>);</span>
 <span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;writexl&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;writexl&#39;</span>);</span>
 <span id="cb1-3"><a href="index.html#cb1-3" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;tidyverse&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>);</span>
@@ -239,6 +241,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="figures/shinyapp.png" /></p>
 <p>To update the app to the newest version, you can run the code.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;tidymass/tidymass_shiny&#39;</span>)</span></code></pre></div>
+<p><strong>Install with Docker</strong></p>
+<p><strong>Install with Server</strong></p>
 
 </div>
 </div>
