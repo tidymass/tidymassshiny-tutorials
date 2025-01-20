@@ -6,7 +6,8 @@ data-format-converter
 methods-to-upload-the-files
 project-initiate
 data-import
-data-exploration-and-data-quaily-assessment
+data-quaily-assessment
+data-cleaning
 install-tidymass-shiny-app
 r-package
 start-tidymass-shiny-app
