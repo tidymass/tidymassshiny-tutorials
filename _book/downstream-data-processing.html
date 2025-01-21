@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Start one project | Tutorials for tidymass shinyapp</title>
+  <title>3 Downstream data processing | Tutorials for tidymass shinyapp</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Start one project | Tutorials for tidymass shinyapp" />
+  <meta property="og:title" content="3 Downstream data processing | Tutorials for tidymass shinyapp" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Start one project | Tutorials for tidymass shinyapp" />
+  <meta name="twitter:title" content="3 Downstream data processing | Tutorials for tidymass shinyapp" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -34,8 +34,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="downstream-data-processing.html"/>
-
+<link rel="prev" href="upstream-data-processing.html"/>
+<link rel="next" href="start-one-project.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -188,13 +188,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="start-one-project" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">4</span> Start one project<a href="start-one-project.html#start-one-project" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="r-package" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> R package<a href="start-one-project.html#r-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>1234</p>
-<p>xiaotao shen test</p>
-<p>123</p>
+<div id="downstream-data-processing" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Downstream data processing<a href="downstream-data-processing.html#downstream-data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="metabolite-annotation" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Metabolite annotation<a href="downstream-data-processing.html#metabolite-annotation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To perform metabolite annotation, you need to click <strong>SELECT MS2 FOLDER</strong> and import MS2 data first.</p>
+<p><img src="figures/ms2_folder.png" /></p>
+<p>Then click <strong>START</strong>.</p>
+<p><img src="figures/metabolite_annotation.png" /></p>
+<p><img src="figures/metabolite_annotation2.png" /></p>
+<p>We also need necessary MS2 databases for metabolite annotation, you may download these databases from <a href="https://www.tidymass.org/metid/articles/public_databases.html" target="_blank">metid website</a>. You can also use Tidymass to build your own database, but please be noted that the format should be in “.rda”.</p>
+<p>After the download is complete, place them in a new folder and click <strong>CHOOSE FOLDER</strong>.</p>
+<p>Here we also provide some public databases and you can simply select them to perform annotation without downloading anything.</p>
+<p><img src="figures/metabolite_annotation3.png" /></p>
+</div>
+<div id="annotation-filtering" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Annotation filtering<a href="downstream-data-processing.html#annotation-filtering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Click <strong>Adduct for level 3 annotation</strong> and then click <strong>START</strong> to perform annotation filtering.</p>
+<p><img src="figures/annotation_filtering.png" /></p>
+</div>
+<div id="origin-analysis-to-be-done" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Origin analysis (to be done)<a href="downstream-data-processing.html#origin-analysis-to-be-done" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -203,8 +217,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="downstream-data-processing.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="upstream-data-processing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="start-one-project.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -235,7 +249,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-begining.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-install.Rmd",
 "text": "Edit"
 },
 "history": {

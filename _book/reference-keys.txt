@@ -8,8 +8,9 @@ project-initiate
 data-import
 data-quaily-assessment
 data-cleaning
-install-tidymass-shiny-app
-r-package
-start-tidymass-shiny-app
+downstream-data-processing
+metabolite-annotation
+annotation-filtering
+origin-analysis-to-be-done
 start-one-project
-r-package-1
+r-package

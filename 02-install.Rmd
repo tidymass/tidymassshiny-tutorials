@@ -1,42 +1,40 @@
-# Install tidymass shiny APP
+# Downstream data processing
 
-## R package
+## Metabolite annotation
 
-You can find the source code of the package [here](https://github.com/tidymass/tidymass_shiny).
+To perform metabolite annotation, you need to click **SELECT MS2 FOLDER** and import MS2 data first. 
 
-Use the below code to install the package.
+![](figures/ms2_folder.png)
 
-```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-##> for chinese users:
-##> options("repos" = c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/"))
-##> options(BioC_mirror="https://mirrors.westlake.edu.cn/bioconductor")
+Then click **START**.
+
+![](figures/metabolite_annotation.png)
+
+![](figures/metabolite_annotation2.png)
+
+We also need necessary MS2 databases for metabolite annotation, you may download these databases from [metid website](https://www.tidymass.org/metid/articles/public_databases.html){target="_blank"}. You can also use Tidymass to build your own database, but please be noted that the format should be in ".rda".
+
+After the download is complete, place them in a new folder and click **CHOOSE FOLDER**.
+
+Here we also provide some public databases and you can simply select them to perform annotation without downloading anything.
+
+![](figures/metabolite_annotation3.png)
+
+## Annotation filtering
+
+Click **Adduct for level 3 annotation** and then click **START** to perform annotation filtering.
+
+![](figures/annotation_filtering.png)
 
 
-if (!require('remotes')) install.packages('remotes');
-if (!require('tidyverse')) install.packages('tidyverse');
-if (!require('tidymass')) {
-  source("https://www.tidymass.org/tidymass-packages/install_tidymass.txt");
-  install_tidymass(from = "tidymass.org")
-};
-if (!require('shinyFiles')) remotes::install_github('thomasp85/shinyFiles');
-if (!require('shinyWidgets')) remotes::install_github("dreamRs/shinyWidgets");
-if (!require('shiny')) install.packages('shiny');
-if (!require('bsicons')) install.packages('bsicons');
-if (!require('bslib')) install.packages('bslib');
-if (!require('plotly')) install.packages('plotly');
-if (!require('colourpicker')) install.packages('colourpicker');
-if (!require('plantmdb')) remotes::install_github("xuebinzhang-lab/plantmdb")  ## plant metabolomics database. for test use.
-if (!require('tidymassshiny')) remotes::install_github('tidymass/tidymass_shiny')
-```
+## Origin analysis (to be done)
 
-## Start tidymass shiny APP
 
-```{r,eval=FALSE,warning=FALSE, R.options="", message=TRUE, cache=TRUE}
-run_tidymass_shiny()
-```
 
-The tidymass shiny App will start like below shows:
 
-![](figures/figure1.png)
+
+
+
+
 
 
