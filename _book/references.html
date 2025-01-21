@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Tutorials for tidymass shinyapp</title>
+  <title>4 References | Tutorials for tidymass shinyapp</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Tutorials for tidymass shinyapp" />
+  <meta property="og:title" content="4 References | Tutorials for tidymass shinyapp" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Tutorials for tidymass shinyapp" />
+  <meta name="twitter:title" content="4 References | Tutorials for tidymass shinyapp" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -34,8 +34,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="downstream-data-processing.html"/>
 
-<link rel="next" href="upstream-data-processing.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -185,73 +185,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Tutorials for tidymass shinyapp</h1>
-</div>
-<div id="installation" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Installation<a href="index.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><strong>tidymass shinyapp</strong> (<a href="https://github.com/tidymass/tidymass_shiny" class="uri">https://github.com/tidymass/tidymass_shiny</a>) is a user-friendly web application for <strong>tidymass</strong> (<a href="https://www.tidymass.org/" class="uri">https://www.tidymass.org/</a>) that requires little or no programming experience.</p>
-<p>The app can only be installed via code now, and we will introduce how to do that step by step in this chapter.</p>
-<div id="preparations" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Preparations<a href="index.html#preparations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To begin with, you need to install R and Rstudio, both of which can be free downloaded from official websites.</p>
-<p>If you have installed them before, please ensure that R version &gt; 4.1 as tidymass required, ohterwise download and install the <a href="https://cran.r-project.org/mirrors.html" target="_blank">latest version of R</a>.</p>
-<p><strong>Install R</strong></p>
-<p>Download <a href="https://www.r-project.org/" target="_blank">R</a> and install it.</p>
-<p><img src="figures/R_install.png" /></p>
-<p><strong>Install Rstudio</strong></p>
-<p>Download <a href="https://posit.co/download/rstudio-desktop/#download" target="_blank">Rstudio</a> and install it.</p>
-<p><img src="figures/Rstudio_install.png" /></p>
-<p><strong>Open the Rstudio</strong></p>
-<p><img src="figures/Rstudio.png" /></p>
-<p><strong>Setting up the suitable Mirror</strong></p>
-<p>You may set up the suitable mirror to accelerate R package downloads.</p>
-<p>Click “Tools” in the Rstudio, then click “Global options” and select “Packages”. You may select mirror from TUNA Team if you are users from China.</p>
-<p><img src="figures/mirror.png" /></p>
-</div>
-<div id="methods-to-install-tidymass-shinyapp" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Methods to install tidymass shinyapp<a href="index.html#methods-to-install-tidymass-shinyapp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here we provide three different methods to install tidymass shinyapp: <strong>R</strong>, <strong>Docker</strong> and <strong>Server</strong>.</p>
-<p><strong>Install with R</strong></p>
-<p>To install the app with R, you are recommended to run the following code.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;remotes&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;remotes&#39;</span>);</span>
-<span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;writexl&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;writexl&#39;</span>);</span>
-<span id="cb1-3"><a href="index.html#cb1-3" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;tidyverse&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>);</span>
-<span id="cb1-4"><a href="index.html#cb1-4" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;tidymass&#39;</span>)) {</span>
-<span id="cb1-5"><a href="index.html#cb1-5" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">&quot;https://www.tidymass.org/tidymass-packages/install_tidymass.txt&quot;</span>);</span>
-<span id="cb1-6"><a href="index.html#cb1-6" tabindex="-1"></a>  <span class="fu">install_tidymass</span>(<span class="at">from =</span> <span class="st">&quot;tidymass.org&quot;</span>)</span>
-<span id="cb1-7"><a href="index.html#cb1-7" tabindex="-1"></a>};</span>
-<span id="cb1-8"><a href="index.html#cb1-8" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;shinyFiles&#39;</span>)) remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;thomasp85/shinyFiles&#39;</span>);</span>
-<span id="cb1-9"><a href="index.html#cb1-9" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;shinyWidgets&#39;</span>)) remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;dreamRs/shinyWidgets&quot;</span>);</span>
-<span id="cb1-10"><a href="index.html#cb1-10" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;shiny&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;shiny&#39;</span>);</span>
-<span id="cb1-11"><a href="index.html#cb1-11" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;bsicons&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;bsicons&#39;</span>);</span>
-<span id="cb1-12"><a href="index.html#cb1-12" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;bslib&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;bslib&#39;</span>);</span>
-<span id="cb1-13"><a href="index.html#cb1-13" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;plotly&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;plotly&#39;</span>);</span>
-<span id="cb1-14"><a href="index.html#cb1-14" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;colourpicker&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;colourpicker&#39;</span>);</span>
-<span id="cb1-15"><a href="index.html#cb1-15" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;plantmdb&#39;</span>)) remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;xuebinzhang-lab/plantmdb&quot;</span>)  <span class="do">## plant metabolomics database. for test use.</span></span>
-<span id="cb1-16"><a href="index.html#cb1-16" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&#39;tidymassshiny&#39;</span>)) remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;tidymass/tidymass_shiny&#39;</span>)</span></code></pre></div>
-<p>To start the app, run the code.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="index.html#cb2-2" tabindex="-1"></a><span class="fu">library</span>(tidymass)</span>
-<span id="cb2-3"><a href="index.html#cb2-3" tabindex="-1"></a><span class="fu">library</span>(tidymassshiny)</span>
-<span id="cb2-4"><a href="index.html#cb2-4" tabindex="-1"></a><span class="fu">library</span>(plantmdb) <span class="do">## for test use</span></span>
-<span id="cb2-5"><a href="index.html#cb2-5" tabindex="-1"></a><span class="fu">run_tidymass_shiny</span>()</span></code></pre></div>
-<p>You should be able to see:</p>
-<p><img src="figures/shinyapp.png" /></p>
-<p>To update the app to the newest version, you can run the code.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;tidymass/tidymass_shiny&#39;</span>)</span></code></pre></div>
-<p><strong>Install with Docker</strong></p>
-<p><strong>Install with Server</strong></p>
+<div id="references" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="downstream-data-processing.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="upstream-data-processing.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -282,7 +226,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-begining.Rmd",
 "text": "Edit"
 },
 "history": {
