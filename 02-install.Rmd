@@ -2,13 +2,20 @@
 
 ## Metabolite annotation
 
-To perform metabolite annotation, you need to click **SELECT MS2 FOLDER** and import MS2 data first. 
+Metabolite annotation can be performed based on in-house and available open-source databases. To begin with, you need to click **SELECT MS2 FOLDER** and import prepared MS2 data. These files should be in the format of ".mgf", and they should be stored separately for negative and positive modes.
+
 
 ![](figures/ms2_folder.png)
 
-Then click **START**.
+Here are also some parameters can be modified: a character vector specifying the column types. Default is "rp" (column), numeric, the m/z tolerance for matching MS1 and MS2. Default is 15 (ms1.ms2.match.mz.tol), numeric, the retention time tolerance for matching MS1 and MS2. Default is 30 (ms1.ms2.match.rt.tol).
+
+Once you have set the parameters, click **START**.
 
 ![](figures/metabolite_annotation.png)
+
+Next, you can choose annotation parameters: A numeric value specifying the mass accuracy threshold for MS1 matching in parts per million (ppm). Defaults to 25 (ms1.match.ppm), A numeric value specifying the mass accuracy threshold for MS2 (Fragment ion) matching in ppm. Defaults to 30 (ms2.match.ppm), A numeric value specifying the retention time matching tolerance in seconds. Defaults to 30 (rt.match.tol), A numeric value specifying the number of top candidates to retain per feature. Defaults to 3 (candidate.num), A character string specifying the chromatographic column type, either "rp" (reverse phase) or "hilic". Defaults to "rp" (column), An integer specifying the number of threads to use for parallel processing. Defaults to 3 (threads).
+
+.
 
 ![](figures/metabolite_annotation2.png)
 
