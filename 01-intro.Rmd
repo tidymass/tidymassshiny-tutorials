@@ -15,12 +15,13 @@ You can refer to the following parameter settings for ProteoWizard.
 
 ## Methods to upload the files
 
-To begin with, you need to set up the working directory and upload the required files. Here we have three options to upload the files.
+To begin with, you need to set up the working directory and upload the required files. Here we provide three options to do that.
 
 **Start with Ms file**: 
 If you have raw data in the format like .mzML or mzXML. You can click on ‘Start with Ms file’ to upload the file.
 
-![](figures/select_ms.png)
+![](figures/mzXML.png)
+
 **Start with table file**: If your data is a post-peak metabolite expression matrix, you can click on the ‘Start with table file’ button to upload the data. The sample table is as follows, and the first four columns must exist, with column names not to be changed. 
 
 ![](figures/table_upload.png)
@@ -34,9 +35,9 @@ If you have raw data in the format like .mzML or mzXML. You can click on ‘Star
 Here are the steps you need to follow to initiate the project:
 
 1. Set working directory
-2. Upload sample_info.csv file
+2. Upload `sample_info.csv` file
 3. You may click the dropdown button and adjust the column names if there are any changes for them.
-4. Click "INITIALIZE PROJECT" button and check the sample information.
+4. Click "Initialize Project" button and check the sample information.
 
 ![](figures/project_initiate.png)
 
@@ -44,7 +45,7 @@ Here are the steps you need to follow to initiate the project:
 
 **Upload Ms file**
 
-Before import the data, please ensure that the files are well anranged. Here is an example:
+Before importing the data, please make sure the files are properly organized according to sample type, such as `QC` and `Subject`. Here is an example:
 
 ![](figures/MS1_files.png)
 
@@ -53,21 +54,29 @@ Click the dropdown button **Data import** and select **Start with MS file**.
 ![](figures/MS_start.png)
 
 
-Then click **SELECT MS1 FOLDER** and choose the MS1 folder. Next, click **CHECK INPUT FILE** and you will see the number of files you have just uploaded.
+Then click **SELECT MS1 FOLDER** and choose the MS1 folder. 
 
 ![](figures/select_ms.png)
 
-If the files are ready for analysis, you can begin to optimize peak picking parameters. The first step is to choose the ppmCut.
+Next, click **CHECK INPUT FILE** and a prompt will appear if the files have been successfully uploaded.
 
-![](figures/optimization_part1.png)
+![](figures/correct_prompt.png)
 
-And the second step is to run with the ppmCut. (need to scroll down to find the button)
+After the files are ready for analysis, you can choose to set peak picking parameters yourself. Here are some important parameters:
 
-![](figures/optimization_part2.png)
+* ppm: Peak detection ppm.
+* peakwidth: Peak width. It is dependent on your column and LC system. 
+* snthresh: Signal to noise threshold.
+* noise: Noise cutoff.
+* threads: The core number for performing.
 
-Finally, click **START PEAK PICKING** and get the results.
+For more details, please refer to [massprocesser](https://www.tidymass.org/massprocesser/articles/raw_data_processing.html){target="_blank"}.
 
-![](figures/peak_picking.png)
+
+If you want to use the recommended parameters, just click **Start** to proceed with further optimization. This will find the best ppm cutoff and run with it to perform the optimization.
+
+
+Finally, click **Start peak picking** and get the results.
 
 **Upload table file**
 
@@ -132,13 +141,30 @@ Click **START** below to filter outlier samples.
 
 Here you can select many different methods for missing value imputation, including knn, missforest (mf) and ppca etc. 
 
-For knn, the parameters can be modified include number of neighbors (k), maximum row missing proportion (rowmax), maximum column missing proportion (colmax), maximum prediction proportion (maxp) and random number generator seed (rng.seed).
+**Parameters**
+
+For knn
+
+* k: the parameters can be modified include number of neighbors. Defaults to 10.
+* rowmax: maximum row missing proportion. Defaults to 0.5.
+* colmax: maximum column missing proportion. Defaults to 0.8.
+* maxp: maximum prediction proportion. Defaults to 1500.
+* rng.seed: random number generator seed.
+
+For missForest (rf)
+
+* maxiter: the parameters include maximum iterations. Defaults to 10.
+* ntree: number of trees. Defaults to 100.
+* decreasing: whether to interpolate missing values in order from most to least number of missing values. Defaults to FALSE.
+
+For ppca
+
+* nPcs: the parameters can be modified include number of principal components. Defaults to 2.
+* maxSteps: maximum steps for iterations. Defaults to 100.
+* threshold: convergence threshold. Defaults to 1e-04.
+
 
 ![](figures/imputation1.png)
-
-For missForest (rf), the parameters include maximum iterations (maxiter), number of trees (ntree) and whether to interpolate missing values in order from most to least number of missing values (decreasing).
-
-For ppca, the parameters can be modified include number of principal components (nPcs), maximum steps for iterations (maxSteps) and convergence threshold (threshold).
 
 If the method has been chosen and all the parameters have been set, click **START** to perform missing value imputation.
 
@@ -150,7 +176,19 @@ To remove unwanted analytical variations and integrate multiple batches forming 
 
 Here we provide several methods to be selected, including QC sample-based data normalization like SVR and loess and sample-wise method like PQN, median, mean and total intensity normalization.
 
-You can also modify some parameters to decide: whether to keep the original scale of the data during the data standardization process (keep_scale), whether to enable optimization steps in the standardization process (optimization), the reference value selected for using the Probabilistic Quotient Normalization method (pqn_reference), the start value for parameter search range (begin_value), the end value for parameter search range (end_value), the increment at each step of the parameter search (step_value), the standardized factors used to control multiples (multiple) and the number of threads for normalization (threads).
+
+**Parameters**
+
+* keep_scale: whether to keep the original scale of the data during the data standardization process. Defaults to TRUE.
+* optimization: whether to enable optimization steps in the standardization process. Defaults to TRUE.
+* pqn_reference: the reference value selected for using the Probabilistic Quotient Normalization method. Defaults to median.
+* begin_value: the start value for parameter search range. Defaults to 0.5.
+* end_value: the end value for parameter search range. Defaults to 1.
+* step_value: the increment at each step of the parameter search. Defaults to 0.2.
+* multiple: the standardized factors used to control multiples. Defaults to 1.
+* threads: the number of threads for normalization. Defaults to 1.
+
+
 
 Click **START** to perform the normalization and integration. Then click **SHOW PLOT** to visualize the difference before and after the normalization.
 

@@ -4,26 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Downstream data processing | Tutorials for tidymass shinyapp</title>
+  <title>3 Downstream data processing | Tutorials for Tidymass shinyapp</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Downstream data processing | Tutorials for tidymass shinyapp" />
+  <meta property="og:title" content="3 Downstream data processing | Tutorials for Tidymass shinyapp" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Downstream data processing | Tutorials for tidymass shinyapp" />
+  <meta name="twitter:title" content="3 Downstream data processing | Tutorials for Tidymass shinyapp" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
   
 
 
@@ -58,6 +58,70 @@ set in the _output.yml file.</p>" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -80,7 +144,7 @@ set in the _output.yml file.</p>" />
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Installation</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preparations"><i class="fa fa-check"></i><b>1.1</b> Preparations</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#methods-to-install-tidymass-shinyapp"><i class="fa fa-check"></i><b>1.2</b> Methods to install tidymass shinyapp</a></li>
@@ -113,7 +177,7 @@ set in the _output.yml file.</p>" />
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorials for tidymass shinyapp</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorials for Tidymass shinyapp</a>
           </h1>
         </div>
 
@@ -125,11 +189,26 @@ set in the _output.yml file.</p>" />
 <h1><span class="header-section-number">3</span> Downstream data processing<a href="downstream-data-processing.html#downstream-data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="metabolite-annotation" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Metabolite annotation<a href="downstream-data-processing.html#metabolite-annotation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Metabolite annotation can be performed based on in-house and available open-source databases.</p>
-<p>To perform metabolite annotation, you need to click <strong>SELECT MS2 FOLDER</strong> and import MS2 data first.</p>
+<p>Metabolite annotation can be performed based on in-house and available open-source databases. To begin with, you need to click <strong>SELECT MS2 FOLDER</strong> and import prepared MS2 data. These files should be in the format of “.mgf”, and they should be stored separately for negative and positive modes.</p>
 <p><img src="figures/ms2_folder.png" /></p>
-<p>Then click <strong>START</strong>.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>column: A character vector specifying the column types. Default is “rp”.</li>
+<li>ms1.ms2.match.mz.tol: Numeric, the m/z tolerance for matching MS1 and MS2. Default is 15.</li>
+<li>ms1.ms2.match.rt.tol: Numeric, the retention time tolerance for matching MS1 and MS2. Default is 30.</li>
+</ul>
+<p>Once you have set the parameters, click <strong>START</strong> to import MS2 data.</p>
 <p><img src="figures/metabolite_annotation.png" /></p>
+<p>Next, you can choose suitable parameters for metabolite annotation.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>ms1.match.ppm: A numeric value specifying the mass accuracy threshold for MS1 matching in parts per million (ppm). Defaults to 25.</li>
+<li>ms2.match.ppm: A numeric value specifying the mass accuracy threshold for MS2 (Fragment ion) matching in ppm. Defaults to 30.</li>
+<li>rt.match.tol: A numeric value specifying the retention time matching tolerance in seconds. Defaults to 30.</li>
+<li>candidate.num: A numeric value specifying the number of top candidates to retain per feature. Defaults to 3.</li>
+<li>column: A character string specifying the chromatographic column type, either “rp” (reverse phase) or “hilic”. Defaults to “rp”.</li>
+<li>threads: An integer specifying the number of threads to use for parallel processing. Defaults to 3.</li>
+</ul>
 <p><img src="figures/metabolite_annotation2.png" /></p>
 <p>We also need necessary MS2 databases for metabolite annotation, you may download these databases from <a href="https://www.tidymass.org/metid/articles/public_databases.html" target="_blank">metid website</a>. You can also use Tidymass to build your own database, but please be noted that the format should be in “.rda”.</p>
 <p>After the download is complete, place them in a new folder and click <strong>CHOOSE FOLDER</strong>.</p>
@@ -138,7 +217,9 @@ set in the _output.yml file.</p>" />
 </div>
 <div id="annotation-filtering" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Annotation filtering<a href="downstream-data-processing.html#annotation-filtering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Click <strong>Adduct for level 3 annotation</strong> and then click <strong>START</strong> to perform annotation filtering.</p>
+<p>The annotation results are assigned conﬁdence levels according to MSI (in-house database, level 1; public MS 2database, level 2; MS1 database, level 3).</p>
+<p>After obtaining annotation results, you can choose how to keep multiple annotations, how to remove redundancy and how to keep annotation levels.</p>
+<p>Click <strong>Adduct for level 3 annotation</strong> and select suitable models and methods, then click <strong>START</strong> to perform annotation filtering.</p>
 <p><img src="figures/annotation_filtering.png" /></p>
 </div>
 <div id="origin-analysis-to-be-done" class="section level2 hasAnchor" number="3.3">
@@ -166,42 +247,42 @@ set in the _output.yml file.</p>" />
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-install.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["_main.pdf", "_main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-install.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
