@@ -189,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">3</span> Downstream data processing<a href="downstream-data-processing.html#downstream-data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="metabolite-annotation" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Metabolite annotation<a href="downstream-data-processing.html#metabolite-annotation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Metabolite annotation can be performed based on in-house and available open-source databases. To begin with, you need to click <strong>SELECT MS2 FOLDER</strong> and import prepared MS2 data. These files should be in the format of “.mgf”, and they should be stored separately for negative and positive modes.</p>
+<p>Metabolite annotation can be performed based on in-house and available open-source databases. To begin with, you need to click <strong>Select MS2 folder</strong> and import prepared MS2 data. These files should be in the format of “.mgf”, and they should be stored separately for negative and positive modes.</p>
 <p><img src="figures/ms2_folder.png" /></p>
 <p><strong>Parameters</strong></p>
 <ul>
@@ -197,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>ms1.ms2.match.mz.tol: Numeric, the m/z tolerance for matching MS1 and MS2. Default is 15.</li>
 <li>ms1.ms2.match.rt.tol: Numeric, the retention time tolerance for matching MS1 and MS2. Default is 30.</li>
 </ul>
-<p>Once you have set the parameters, click <strong>START</strong> to import MS2 data.</p>
+<p>Once you have set the parameters, click <strong>Start</strong> to import MS2 data.</p>
 <p><img src="figures/metabolite_annotation.png" /></p>
 <p>Next, you can choose suitable parameters for metabolite annotation.</p>
 <p><strong>Parameters</strong></p>
@@ -209,15 +209,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>column: A character string specifying the chromatographic column type, either “rp” (reverse phase) or “hilic”. Defaults to “rp”.</li>
 <li>threads: An integer specifying the number of threads to use for parallel processing. Defaults to 3.</li>
 </ul>
+<p>We need necessary MS2 databases for metabolite annotation, and here we provide some common in-house databases.</p>
+<p>More MS2 compound databases can be downloaded from <a href="https://www.tidymass.org/databases/" target="_blank">Tidymass Website</a>. After the download is complete, place them in a new folder and click <strong>Choose folder</strong>.</p>
+<p>You can also use Tidymass to build your own database, please be noted that the format should be in “.rda”.</p>
 <p><img src="figures/metabolite_annotation2.png" /></p>
-<p>We also need necessary MS2 databases for metabolite annotation, you may download these databases from <a href="https://www.tidymass.org/metid/articles/public_databases.html" target="_blank">metid website</a>. You can also use Tidymass to build your own database, but please be noted that the format should be in “.rda”.</p>
-<p>After the download is complete, place them in a new folder and click <strong>CHOOSE FOLDER</strong>.</p>
-<p>Here we also provide some public databases and you can simply select them to perform annotation without downloading anything.</p>
-<p><img src="figures/metabolite_annotation3.png" /></p>
 </div>
 <div id="annotation-filtering" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Annotation filtering<a href="downstream-data-processing.html#annotation-filtering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The annotation results are assigned conﬁdence levels according to MSI (in-house database, level 1; public MS 2database, level 2; MS1 database, level 3).</p>
+<p>The annotation results are assigned conﬁdence levels according to MSI (in-house database, level 1; public MS2 database, level 2; MS1 database, level 3).</p>
 <p>After obtaining annotation results, you can choose how to keep multiple annotations, how to remove redundancy and how to keep annotation levels.</p>
 <p>Click <strong>Adduct for level 3 annotation</strong> and select suitable models and methods, then click <strong>START</strong> to perform annotation filtering.</p>
 <p><img src="figures/annotation_filtering.png" /></p>

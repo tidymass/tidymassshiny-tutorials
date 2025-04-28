@@ -2,7 +2,7 @@
 
 ## Metabolite annotation
 
-Metabolite annotation can be performed based on in-house and available open-source databases. To begin with, you need to click **SELECT MS2 FOLDER** and import prepared MS2 data. These files should be in the format of ".mgf", and they should be stored separately for negative and positive modes.
+Metabolite annotation can be performed based on in-house and available open-source databases. To begin with, you need to click **Select MS2 folder** and import prepared MS2 data. These files should be in the format of ".mgf", and they should be stored separately for negative and positive modes.
 
 ![](figures/ms2_folder.png)
 
@@ -12,7 +12,7 @@ Metabolite annotation can be performed based on in-house and available open-sour
 * ms1.ms2.match.mz.tol: Numeric, the m/z tolerance for matching MS1 and MS2. Default is 15.
 * ms1.ms2.match.rt.tol: Numeric, the retention time tolerance for matching MS1 and MS2. Default is 30.
 
-Once you have set the parameters, click **START** to import MS2 data.
+Once you have set the parameters, click **Start** to import MS2 data.
 
 ![](figures/metabolite_annotation.png)
 
@@ -27,19 +27,17 @@ Next, you can choose suitable parameters for metabolite annotation.
 * column: A character string specifying the chromatographic column type, either "rp" (reverse phase) or "hilic". Defaults to "rp".
 * threads: An integer specifying the number of threads to use for parallel processing. Defaults to 3.
 
+We need necessary MS2 databases for metabolite annotation, and here we provide some common in-house databases. 
+
+More MS2 compound databases can be downloaded from [Tidymass Website](https://www.tidymass.org/databases/){target="_blank"}. After the download is complete, place them in a new folder and click **Choose folder**.
+
+You can also use Tidymass to build your own database, please be noted that the format should be in ".rda".
+
 ![](figures/metabolite_annotation2.png)
-
-We also need necessary MS2 databases for metabolite annotation, you may download these databases from [metid website](https://www.tidymass.org/metid/articles/public_databases.html){target="_blank"}. You can also use Tidymass to build your own database, but please be noted that the format should be in ".rda".
-
-After the download is complete, place them in a new folder and click **CHOOSE FOLDER**.
-
-Here we also provide some public databases and you can simply select them to perform annotation without downloading anything.
-
-![](figures/metabolite_annotation3.png)
 
 ## Annotation filtering
 
-The annotation results are assigned conﬁdence levels according to MSI (in-house database, level 1; public MS 2database, level 2; MS1 database, level 3).
+The annotation results are assigned conﬁdence levels according to MSI (in-house database, level 1; public MS2 database, level 2; MS1 database, level 3).
 
 After obtaining annotation results, you can choose how to keep multiple annotations, how to remove redundancy and how to keep annotation levels.
 
@@ -48,7 +46,19 @@ Click **Adduct for level 3 annotation** and select suitable models and methods, 
 ![](figures/annotation_filtering.png)
 
 
-## Origin analysis (to be done)
+## Merge data
+
+
+
+## Differential Accumulated Metabolites (DAM)
+
+
+
+## Enrichment
+
+
+
+## Feature-based Pathway Analysis (FPA)
 
 
 

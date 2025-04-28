@@ -61,15 +61,15 @@ To install the app with R, you are recommended to run the following code.
 ```{r, eval=FALSE}
 if (!require('remotes')) install.packages('remotes');
 if (!require('writexl')) install.packages('writexl');
+if (!require('Cairo')) install.packages('Cairo');
 if (!require('tidyverse')) install.packages('tidyverse');
-if (!require('tidymass')) {
-  source("https://www.tidymass.org/tidymass-packages/install_tidymass.txt");
-  install_tidymass(from = "tidymass.org")
-};
+if (!require('tidymass')) remotes::install_gitlab("tidymass/tidymass");
 if (!require('shinyFiles')) remotes::install_github('thomasp85/shinyFiles');
 if (!require('shinyWidgets')) remotes::install_github("dreamRs/shinyWidgets");
 if (!require('shiny')) install.packages('shiny');
+if (!require('shinyalert')) install.packages('shinyalert');
 if (!require('bsicons')) install.packages('bsicons');
+if (!require('hexbin')) install.packages('hexbin');
 if (!require('bslib')) install.packages('bslib');
 if (!require('plotly')) install.packages('plotly');
 if (!require('colourpicker')) install.packages('colourpicker');
