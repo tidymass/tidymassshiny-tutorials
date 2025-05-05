@@ -11,5 +11,8 @@ data-cleaning
 downstream-data-processing
 metabolite-annotation
 annotation-filtering
-origin-analysis-to-be-done
+merge-data
+differential-accumulated-metabolites-dam
+enrichment
+feature-based-pathway-analysis-fpa
 references

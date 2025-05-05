@@ -56,14 +56,19 @@ Here we provide three different methods to install tidymass shinyapp: **R**, **D
 
 **Install with R**
 
-To install the app with R, you are recommended to run the following code.
+First, you are recommended to install Tidymass with the following code. For more information and help document, please refer to [Tidymass Website](https://www.tidymass.org/){target="_blank"}
+
+```{r, eval=FALSE}
+remotes::install_gitlab("tidymass/tidymass")
+```
+
+Second, install the necessary packages:
 
 ```{r, eval=FALSE}
 if (!require('remotes')) install.packages('remotes');
 if (!require('writexl')) install.packages('writexl');
 if (!require('Cairo')) install.packages('Cairo');
 if (!require('tidyverse')) install.packages('tidyverse');
-if (!require('tidymass')) remotes::install_gitlab("tidymass/tidymass");
 if (!require('shinyFiles')) remotes::install_github('thomasp85/shinyFiles');
 if (!require('shinyWidgets')) remotes::install_github("dreamRs/shinyWidgets");
 if (!require('shiny')) install.packages('shiny');
@@ -74,11 +79,17 @@ if (!require('bslib')) install.packages('bslib');
 if (!require('plotly')) install.packages('plotly');
 if (!require('colourpicker')) install.packages('colourpicker');
 if (!require('plantmdb')) remotes::install_github("xuebinzhang-lab/plantmdb")  ## plant metabolomics database. for test use.
-if (!require('tidymassshiny')) remotes::install_github('tidymass/tidymass_shiny')
 
 ```
 
-To start the app, run the code.
+Finally, install Tidymass shinyapp with the code:
+
+```{r, eval=FALSE}
+remotes::install_github('tidymass/tidymass_shiny')
+```
+
+
+To start the shiny app, run the code.
 
 ```{r, eval=FALSE}
 library(tidyverse)
