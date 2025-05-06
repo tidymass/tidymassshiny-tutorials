@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Upstream data processing | Tutorials for Tidymass shinyapp</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Upstream data processing | Tutorials for Tidymass shinyapp" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Upstream data processing | Tutorials for Tidymass shinyapp" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="downstream-data-processing.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Installation</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#install-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> Install R and Rstudio</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#for-mac-user-install-cario"><i class="fa fa-check"></i><b>1.2</b> (For Mac User) Install Cario</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#install-tidymass-shinyapp"><i class="fa fa-check"></i><b>1.3</b> Install Tidymass shinyapp</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html"><i class="fa fa-check"></i><b>2</b> Upstream data processing</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-format-converter"><i class="fa fa-check"></i><b>2.1</b> Data format converter</a></li>
+<li class="chapter" data-level="2.2" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#methods-to-upload-the-files"><i class="fa fa-check"></i><b>2.2</b> Methods to upload the files</a></li>
+<li class="chapter" data-level="2.3" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#project-initiate"><i class="fa fa-check"></i><b>2.3</b> Project initiate</a></li>
+<li class="chapter" data-level="2.4" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-import"><i class="fa fa-check"></i><b>2.4</b> Data import</a></li>
+<li class="chapter" data-level="2.5" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-quality-assessment"><i class="fa fa-check"></i><b>2.5</b> Data quality assessment</a></li>
+<li class="chapter" data-level="2.6" data-path="upstream-data-processing.html"><a href="upstream-data-processing.html#data-cleaning"><i class="fa fa-check"></i><b>2.6</b> Data cleaning</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="downstream-data-processing.html"><a href="downstream-data-processing.html"><i class="fa fa-check"></i><b>3</b> Downstream data processing</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="downstream-data-processing.html"><a href="downstream-data-processing.html#metabolite-annotation"><i class="fa fa-check"></i><b>3.1</b> Metabolite annotation</a></li>
+<li class="chapter" data-level="3.2" data-path="downstream-data-processing.html"><a href="downstream-data-processing.html#annotation-filtering"><i class="fa fa-check"></i><b>3.2</b> Annotation filtering</a></li>
+<li class="chapter" data-level="3.3" data-path="downstream-data-processing.html"><a href="downstream-data-processing.html#metabolites-origin"><i class="fa fa-check"></i><b>3.3</b> Metabolites origin</a></li>
+<li class="chapter" data-level="3.4" data-path="downstream-data-processing.html"><a href="downstream-data-processing.html#differential-accumulated-metabolites-dam"><i class="fa fa-check"></i><b>3.4</b> Differential Accumulated Metabolites (DAM)</a></li>
+<li class="chapter" data-level="3.5" data-path="downstream-data-processing.html"><a href="downstream-data-processing.html#enrichment"><i class="fa fa-check"></i><b>3.5</b> Enrichment</a></li>
+<li class="chapter" data-level="3.6" data-path="downstream-data-processing.html"><a href="downstream-data-processing.html#feature-based-pathway-analysis-fpa"><i class="fa fa-check"></i><b>3.6</b> Feature-based Pathway Analysis (FPA)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>4</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tutorials for Tidymass shinyapp</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="upstream-data-processing" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Upstream data processing<a href="upstream-data-processing.html#upstream-data-processing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>To perform multiple analysis with Tidymass shinyapp, you need to upload files first, the demo data can be downloaded through <a href="https://drive.google.com/file/d/1ATlQH46uJ55sOu6B-kCrlQJFkkS4W8KF/view?usp=sharing" target="_blank">Google Drive</a> or <a href="https://pan.baidu.com/s/1Sc2gcifJRurrgRkcDBlvEQ?pwd=393b" target="_blank">BaiduNetdisk</a>.</p>
+<p><img src="figures/demo_data.png" /></p>
+<div id="data-format-converter" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Data format converter<a href="upstream-data-processing.html#data-format-converter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If your data is in raw format, you may first convert it to .mzML or .mzXML format using <a href="https://proteowizard.sourceforge.io" target="_blank">ProteoWizard</a>. Please note that ProteoWizard only support Windows OS, you may consider <a href="https://massconverter.tidymass.org" target="_blank">massconverter</a> if you don’t use Windows OS.</p>
+<p>You can refer to the following parameter settings for ProteoWizard.</p>
+<p><img src="figures/ProteoWizard.png" /></p>
+</div>
+<div id="methods-to-upload-the-files" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Methods to upload the files<a href="upstream-data-processing.html#methods-to-upload-the-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To begin with, you need to set up the working directory and upload the required files. Here we provide three options to do that.</p>
+<p><strong>Start with Ms file</strong>:
+If you have raw data in the format like .mzML or mzXML. You can click on ‘Start with Ms file’ to upload the file.</p>
+<p><img src="figures/mzXML.png" /></p>
+<p><strong>Start with table file</strong>: If your data is a post-peak metabolite expression matrix, you can click on the ‘Start with table file’ button to upload the data. The sample table is as follows, and the first four columns must exist, with column names not to be changed.</p>
+<p><img src="figures/table_upload.png" /></p>
+<p><strong>Start with massdataset object</strong>: If your data is generated by Tidymass, you can choose the ‘Start with massdataset object’ button and directly upload them.</p>
+<p><img src="figures/object_upload.png" /></p>
+</div>
+<div id="project-initiate" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Project initiate<a href="upstream-data-processing.html#project-initiate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here are the steps you need to follow to initiate the project:</p>
+<ol style="list-style-type: decimal">
+<li>Set working directory</li>
+<li>Upload <code>sample_info.csv</code> file</li>
+<li>You may click the dropdown button and adjust the column names if there are any changes for them.</li>
+<li>Click “Initialize Project” button and check the sample information.</li>
+</ol>
+<p><img src="figures/project_initiate.png" /></p>
+</div>
+<div id="data-import" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Data import<a href="upstream-data-processing.html#data-import" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Upload Ms file</strong></p>
+<p>Before importing the data, please make sure the files are properly organized according to sample type, such as <code>QC</code> and <code>Subject</code>. Here is an example:</p>
+<p><img src="figures/MS1_files.png" /></p>
+<p>Click the dropdown button <strong>Data import</strong> and select <strong>Start with MS file</strong>.</p>
+<p><img src="figures/MS_start.png" /></p>
+<p>Then click <strong>SELECT MS1 FOLDER</strong> and choose the MS1 folder.</p>
+<p><img src="figures/select_ms.png" /></p>
+<p>Next, click <strong>CHECK INPUT FILE</strong> and a prompt will appear if the files have been successfully uploaded.</p>
+<p><img src="figures/correct_prompt.png" /></p>
+<p>After the files are ready for analysis, you can choose to set peak picking parameters yourself. Here are some important parameters:</p>
+<ul>
+<li>ppm: Peak detection ppm.</li>
+<li>peakwidth: Peak width. It is dependent on your column and LC system.</li>
+<li>snthresh: Signal to noise threshold.</li>
+<li>noise: Noise cutoff.</li>
+<li>threads: The core number for performing.</li>
+</ul>
+<p>For more details, please refer to <a href="https://www.tidymass.org/massprocesser/articles/raw_data_processing.html" target="_blank">massprocesser</a>.</p>
+<p>If you want to use the recommended parameters, just click <strong>Start</strong> to proceed with further optimization (This may take a long time, please be patient). This will find the best ppm cutoff and run with it to perform the optimization.</p>
+<p>Finally, click <strong>Start peak picking</strong> and get the results.</p>
+<p><strong>Upload table file</strong></p>
+<p>Click the dropdown button <strong>Data import</strong> and select <strong>Start with table file</strong>.</p>
+<p><img src="figures/table_start.png" /></p>
+<p>Then click <strong>BROWSE</strong> and select the csv table. Next, click <strong>INPUT FILE SUMMARY</strong> and you will see the statistics of input file, such as <code>QC Samples</code>, <code>Subject Samples</code> and <code>Total Features</code>.</p>
+<p><img src="figures/table_statistics.png" /></p>
+<p>If all the check have passed, click <strong>Generate massdataset object</strong> to obtain massdataset objects for both positive and negative modes.</p>
+<p><img src="figures/select_table.png" /></p>
+<p><strong>Upload mass_dataset file</strong></p>
+<p>If you already have massdataset objects generated by Tidymass, you can simply upload them. Upload objects for positive and negative modes separately and click <strong>Check input</strong></p>
+<p><img src="figures/object_page.png" /></p>
+</div>
+<div id="data-quality-assessment" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Data quality assessment<a href="upstream-data-processing.html#data-quality-assessment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To have an overall understanding and assessment of the data, you can select <strong>Overview</strong> and click <strong>START</strong> to generate multiple plots, including peak distribution, missing value summary and missing value in samples etc.</p>
+<p>Here you can also adjust parameters and download these plots.</p>
+<p><strong>Meaning of generated plots</strong></p>
+<ul>
+<li>Peak distribution: The distribution of detected metabolic features across retention time and m/z, with point size indicating feature intensity.</li>
+<li>Check missing value: The percentage of missing values across all samples and variables.</li>
+<li>Missing value in samples: The percentage of missing values in samples.</li>
+<li>Missing value in variables: The percentage of missing values in variables.</li>
+</ul>
+<p><img src="figures/Overview1.png" /></p>
+<ul>
+<li>RSD distribution: The percentage of features in QC samples with relative standard deviations (RSD) below given thresholds, here the <strong>rsd cutoff</strong> defaults to 30% and can be adjusted.</li>
+<li>Intensity for all the variables: The distribution of intensities across all variables for each sample.</li>
+<li>PCA: PCA plot of the dataset, which can be colored by sample_id, injection_order and batch etc.</li>
+<li>Sample correlation: The correlation score between different groups, here three correlation methods can be selected: spearman, kendall and pearson.</li>
+</ul>
+<p><img src="figures/Overview2.png" /></p>
+</div>
+<div id="data-cleaning" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Data cleaning<a href="upstream-data-processing.html#data-cleaning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before metabolite annotation, it’s necessary to perform <strong>data cleaning</strong> as various bias may exist in sample preparation and data acquisition. It can be divided into different steps such as noisy feature removal and outlier samples removal. For more details, please refer to <a href="https://masscleaner.tidymass.org/" target="_blank">masscleaner</a>.</p>
+<p><strong>Remove noisy metabolic features</strong></p>
+<p>The first step is removing noisy metabolic features. Here we choose to remove variables who have MV in more than 20% QC samples and in at lest 50% samples in control group or case group, so the <strong>MV cutoff of QC samples (%)</strong> has been set as 20 and <strong>MV cutoff (%)</strong> has been set as 50.</p>
+<p>Click <strong>Start</strong> to remove these noisy metabolites.</p>
+<p>Next, you can visualize the MV percentage of samples for <code>QC group</code>, <code>Subject group</code> or both of them by click <strong>Show plot</strong>.</p>
+<p><img src="figures/noisy_metabolites.png" /></p>
+<p><strong>Filter outlier samples</strong></p>
+<p>When analyzing large cohorts, outlier samples can be a serious problem. In this step, we will filter these outlier samples.</p>
+<p>Before filtering outlier samples, you can click <strong>Start</strong> above to show the plot for Missing value in samples and PCA plot.</p>
+<p><img src="figures/outliers.png" /></p>
+<p>In Tidymass shinyapp, we provide multiple options to filter outliers, you may select different strategies according to your requirement. For more information, please refer to this <a href="https://privefl.github.io/blog/detecting-outlier-samples-in-pca/" target="_blank">blog</a>.</p>
+<p>For “By tidymass” strategy, four remove outlier conditions are provided: according to NA (according_to_na), accoriding to standard deviation for principal component (pc_sd), according to mean abosolute deviation for principal component (pc_mad) and according to distance (according_to_distance).</p>
+<p><img src="figures/outliers_tidymass.png" /></p>
+<p>For “By myself” strategy, the outliers for both positive and negative modes are set to be “none”.</p>
+<p>Click <strong>Start</strong> below to filter outlier samples.</p>
+<p><strong>Missing value imputation</strong></p>
+<p>Here you can select many different methods for missing value imputation, including knn, missforest (mf) and ppca etc.</p>
+<p><strong>Parameters</strong></p>
+<p>For knn</p>
+<ul>
+<li>k: the parameters can be modified include number of neighbors. Defaults to 10.</li>
+<li>rowmax: maximum row missing proportion. Defaults to 0.5.</li>
+<li>colmax: maximum column missing proportion. Defaults to 0.8.</li>
+<li>maxp: maximum prediction proportion. Defaults to 1500.</li>
+<li>rng.seed: random number generator seed.</li>
+</ul>
+<p>For missForest (rf)</p>
+<ul>
+<li>maxiter: the parameters include maximum iterations. Defaults to 10.</li>
+<li>ntree: number of trees. Defaults to 100.</li>
+<li>decreasing: whether to interpolate missing values in order from most to least number of missing values. Defaults to FALSE.</li>
+</ul>
+<p>For ppca</p>
+<ul>
+<li>nPcs: the parameters can be modified include number of principal components. Defaults to 2.</li>
+<li>maxSteps: maximum steps for iterations. Defaults to 100.</li>
+<li>threshold: convergence threshold. Defaults to 1e-04.</li>
+</ul>
+<p><img src="figures/imputation1.png" /></p>
+<p>If the method has been chosen and all the parameters have been set, click <strong>START</strong> to perform missing value imputation.</p>
+<p><img src="figures/imputation2.png" /></p>
+<p><strong>Data normalization and integration</strong></p>
+<p>To remove unwanted analytical variations and integrate multiple batches forming an integral data set for subsequent statistical analysis, we need to perform data normalization and integration.</p>
+<p>Here we provide several methods to be selected, including QC sample-based data normalization like <code>svr</code> and <code>loess</code> and sample-wise method like <code>pqn</code>, <code>median</code>, <code>mean</code> and <code>total</code> intensity normalization.</p>
+<p><img src="figures/normalization_methods.png" /></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>keep_scale: whether to keep the original scale of the data during the data standardization process. Defaults to TRUE.</li>
+<li>optimization: whether to enable optimization steps in the standardization process. Defaults to TRUE.</li>
+<li>pqn_reference: the reference value selected for using the Probabilistic Quotient Normalization method. Defaults to median.</li>
+<li>begin_value: the start value for parameter search range. Defaults to 0.5.</li>
+<li>end_value: the end value for parameter search range. Defaults to 1.</li>
+<li>step_value: the increment at each step of the parameter search. Defaults to 0.2.</li>
+<li>multiple: the standardized factors used to control multiples. Defaults to 1.</li>
+<li>threads: the number of threads for normalization. Defaults to 1.</li>
+</ul>
+<p>Click <strong>Start analysis</strong> to perform the normalization and integration (The step may take some time, please be patient). Then click <strong>Show plot</strong> to visualize the difference before and after the normalization.</p>
+<p><img src="figures/normaliztion.png" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="downstream-data-processing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
