@@ -15,11 +15,11 @@ github-repo: "rstudio/bookdown-demo"
 
 # Installation
 
-**tidymass shinyapp** (https://github.com/tidymass/tidymass_shiny) is a user-friendly web application for **tidymass** (https://www.tidymass.org/) that requires little or no programming experience.
+[Tidymass shinyapp](https://github.com/tidymass/tidymass_shiny){target="_blank"} is a user-friendly web application for [Tidymass](https://www.tidymass.org/){target="_blank"} that requires little or no programming experience.
 
 The app can only be installed via code now, and we will introduce how to do that step by step in this chapter.
 
-## Preparations
+## Install R and Rstudio
 
 To begin with, you need to install R and Rstudio, both of which can be free downloaded from official websites.
 
@@ -41,22 +41,33 @@ Download [Rstudio](https://posit.co/download/rstudio-desktop/#download){target="
 
 ![](figures/Rstudio.png)
 
+## (For Mac User) Install Cario
 
-**Setting up the suitable Mirror**
+Cairo is a 2D graphics library used by R for high-quality plots and needed for Tidymass Shinyapp. On macOS, it requires the X11 system, which is not installed by default. You can follow the following steps if you haven't install Cairo.
 
-You may set up the suitable mirror to accelerate R package downloads.
+First, visit the official website of [XQuartz](https://www.xquartz.org/){target="_blank"} and install it, and this will restart your computer.
 
-Click "Tools" in the Rstudio, then click "Global options" and select "Packages". You may select mirror from TUNA Team if you are users from China.
+![](figures/Cairo.png)
 
-![](figures/mirror.png)
+Next, you can install **Cairo** by running the code in Rstudio:
 
-## Methods to install tidymass shinyapp
+```{r, eval=FALSE}
+install.packages("Cairo", type = "source")
+```
+
+If the installation is successful, you should be able to library it:
+
+```{r, eval=FALSE}
+library(Cairo)
+```
+
+## Install Tidymass shinyapp
 
 Here we provide three different methods to install tidymass shinyapp: **R**, **Docker** and **Server**.
 
 **Install with R**
 
-First, you are recommended to install Tidymass with the following code. For more information and help document, please refer to [Tidymass Website](https://www.tidymass.org/){target="_blank"}
+First, you are recommended to install **Tidymass** with the following code. For more information and guidance, please refer to [Tidymass Website](https://www.tidymass.org/){target="_blank"}
 
 ```{r, eval=FALSE}
 remotes::install_gitlab("tidymass/tidymass")
@@ -66,20 +77,19 @@ Second, install the necessary packages:
 
 ```{r, eval=FALSE}
 if (!require('remotes')) install.packages('remotes');
-if (!require('writexl')) install.packages('writexl');
-if (!require('Cairo')) install.packages('Cairo');
 if (!require('tidyverse')) install.packages('tidyverse');
+if (!require('writexl')) install.packages("writexl");
+if (!require('hexbin')) install.packages('hexbin')
+if (!require('ComplexUpset'))install.packages('ComplexUpset');
+if (!require('shinyalert'))install.packages('shinyalert');
 if (!require('shinyFiles')) remotes::install_github('thomasp85/shinyFiles');
 if (!require('shinyWidgets')) remotes::install_github("dreamRs/shinyWidgets");
 if (!require('shiny')) install.packages('shiny');
-if (!require('shinyalert')) install.packages('shinyalert');
 if (!require('bsicons')) install.packages('bsicons');
-if (!require('hexbin')) install.packages('hexbin');
 if (!require('bslib')) install.packages('bslib');
 if (!require('plotly')) install.packages('plotly');
 if (!require('colourpicker')) install.packages('colourpicker');
-if (!require('plantmdb')) remotes::install_github("xuebinzhang-lab/plantmdb")  ## plant metabolomics database. for test use.
-
+if (!require('massdbbuildin')) remotes::install_github('tidymass/massdbbuildin')
 ```
 
 Finally, install Tidymass shinyapp with the code:
@@ -89,25 +99,18 @@ remotes::install_github('tidymass/tidymass_shiny')
 ```
 
 
-To start the shiny app, run the code.
+To start the Tidymass shinyapp:
 
 ```{r, eval=FALSE}
 library(tidyverse)
 library(tidymass)
 library(tidymassshiny)
-library(plantmdb) ## for test use
 run_tidymass_shiny()
 ```
 
 You should be able to see:
 
 ![](figures/shinyapp.png)
-
-To update the app to the newest version, you can run the code.
-
-```{r, eval=FALSE}
-remotes::install_github('tidymass/tidymass_shiny')
-```
 
 **Install with Docker**
 

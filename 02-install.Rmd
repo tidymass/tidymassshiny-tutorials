@@ -27,11 +27,11 @@ Next, you can choose suitable parameters for metabolite annotation.
 * column: A character string specifying the chromatographic column type, either "rp" (reverse phase) or "hilic". Defaults to "rp".
 * threads: An integer specifying the number of threads to use for parallel processing. Defaults to 3.
 
-We need necessary MS2 databases for metabolite annotation, and here we provide some common in-house databases. 
+We need necessary MS2 databases for metabolite annotation, and here we provide some common in-house databases such as Mona, Massbank and HMDB. 
 
 More MS2 compound databases can be downloaded from [Tidymass Website](https://www.tidymass.org/databases/){target="_blank"}. After the download is complete, place them in a new folder and click **Choose folder**.
 
-You can also use Tidymass to build your own database, please be noted that the format should be in ".rda".
+Click **Start annotation** to begin the job (The job will start about 10s after you click the button, don't click again!).
 
 ![](figures/metabolite_annotation2.png)
 
@@ -45,8 +45,7 @@ Click **Adduct for level 3 annotation** and select suitable models and methods, 
 
 ![](figures/annotation_filtering.png)
 
-
-## Merge data
+## Metabolites origin
 
 
 
