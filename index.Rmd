@@ -1,121 +1,60 @@
 --- 
-title: "Tutorials for Tidymass shinyapp"
+title: "A Minimal Book Example"
+author: "John Doe"
+date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography:
-- book.bib
-- packages.bib
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
 description: |
   This is a minimal example of using the bookdown package to write a book.
-  set in the _output.yml file.
   The HTML output format for this example is bookdown::gitbook,
-link-citations: true
-github-repo: "rstudio/bookdown-demo"
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
 ---
 
-# Installation
+# About
 
-[Tidymass shinyapp](https://github.com/tidymass/tidymass_shiny){target="_blank"} is a user-friendly web application for [Tidymass](https://www.tidymass.org/){target="_blank"} that requires little or no programming experience.
+This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
 
-The app can only be installed via code now, and we will introduce how to do that step by step in this chapter.
+## Usage 
 
-## Install R and Rstudio
+Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
 
-To begin with, you need to install R and Rstudio, both of which can be free downloaded from official websites.
+Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
 
-If you have installed them before, please ensure that R version > 4.1 as tidymass required, ohterwise download and install the [latest version of R](https://cran.r-project.org/mirrors.html){target="_blank"}.
+The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
 
-**Install R**
+## Render book
 
-Download [R](https://www.r-project.org/){target="_blank"} and install it. 
+You can render the HTML version of this example book without changing anything:
 
-![](figures/R_install.png)
+1. Find the **Build** pane in the RStudio IDE, and
 
-**Install Rstudio**
+1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
 
-Download [Rstudio](https://posit.co/download/rstudio-desktop/#download){target="_blank"} and install it.
-
-![](figures/Rstudio_install.png)
-
-**Open the Rstudio**
-
-![](figures/Rstudio.png)
-
-## (For Mac User) Install Cario
-
-Cairo is a 2D graphics library used by R for high-quality plots and needed for Tidymass Shinyapp. On macOS, it requires the X11 system, which is not installed by default. You can follow the following steps if you haven't install Cairo.
-
-First, visit the official website of [XQuartz](https://www.xquartz.org/){target="_blank"} and install it, and this will restart your computer.
-
-![](figures/Cairo.png)
-
-Next, you can install **Cairo** by running the code in Rstudio:
+Or build the book from the R console:
 
 ```{r, eval=FALSE}
-install.packages("Cairo", type = "source")
+bookdown::render_book()
 ```
 
-If the installation is successful, you should be able to library it:
+To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
 
-```{r, eval=FALSE}
-library(Cairo)
-```
+## Preview book
 
-## Install Tidymass shinyapp
+As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
 
-Here we provide three different methods to install tidymass shinyapp: **R**, **Docker** and **Server**.
-
-**Install with R**
-
-First, you are recommended to install **Tidymass** with the following code. For more information and guidance, please refer to [Tidymass Website](https://www.tidymass.org/){target="_blank"}
-
-```{r, eval=FALSE}
-remotes::install_gitlab("tidymass/tidymass")
-```
-
-Second, install the necessary packages:
-
-```{r, eval=FALSE}
-if (!require('remotes')) install.packages('remotes');
-if (!require('tidyverse')) install.packages('tidyverse');
-if (!require('writexl')) install.packages("writexl");
-if (!require('hexbin')) install.packages('hexbin')
-if (!require('ComplexUpset'))install.packages('ComplexUpset');
-if (!require('shinyalert'))install.packages('shinyalert');
-if (!require('shinyFiles')) remotes::install_github('thomasp85/shinyFiles');
-if (!require('shinyWidgets')) remotes::install_github("dreamRs/shinyWidgets");
-if (!require('shiny')) install.packages('shiny');
-if (!require('bsicons')) install.packages('bsicons');
-if (!require('bslib')) install.packages('bslib');
-if (!require('plotly')) install.packages('plotly');
-if (!require('colourpicker')) install.packages('colourpicker');
-if (!require('massdbbuildin')) remotes::install_github('tidymass/massdbbuildin')
-```
-
-Finally, install Tidymass shinyapp with the code:
-
-```{r, eval=FALSE}
-remotes::install_github('tidymass/tidymass_shiny')
+```{r eval=FALSE}
+bookdown::serve_book()
 ```
 
 
-To start the Tidymass shinyapp:
-
-```{r, eval=FALSE}
-library(tidyverse)
-library(tidymass)
-library(tidymassshiny)
-run_tidymass_shiny()
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
 ```
-
-You should be able to see:
-
-![](figures/shinyapp.png)
-
-**Install with Docker**
-
-
-**Install with Server**
-
-
-

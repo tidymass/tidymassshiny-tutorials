@@ -1,5 +1,0 @@
-# References
-
-1. Shen, X., Yan, H., Wang, C. et al. TidyMass an object-oriented reproducible analysis framework for LC–MS data. Nat Commun 13, 4365 (2022). https://doi.org/10.1038/s41467-022-32155-w
-2. https://www.tidymass.org/
-3. https://github.com/tidymass/tidymass_shiny

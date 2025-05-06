@@ -113,14 +113,32 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Tutorials for Tidymass shinyapp},
+  pdftitle={A Minimal Book Example},
+  pdfauthor={John Doe},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Tutorials for Tidymass shinyapp}
-\author{}
-\date{\vspace{-2.5em}}
+\title{A Minimal Book Example}
+\author{John Doe}
+\date{2024-12-20}
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -128,437 +146,234 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Installation}\label{installation}
+\chapter{About}\label{about}
 
-\textbf{tidymass shinyapp} (\url{https://github.com/tidymass/tidymass_shiny}) is a user-friendly web application for \textbf{tidymass} (\url{https://www.tidymass.org/}) that requires little or no programming experience.
+This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
 
-The app can only be installed via code now, and we will introduce how to do that step by step in this chapter.
+\section{Usage}\label{usage}
 
-\section{Preparations}\label{preparations}
+Each \textbf{bookdown} chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter \emph{must} start with a first-level heading: \texttt{\#\ A\ good\ chapter}, and can contain one (and only one) first-level heading.
 
-To begin with, you need to install R and Rstudio, both of which can be free downloaded from official websites.
+Use second-level and higher headings within chapters like: \texttt{\#\#\ A\ short\ section} or \texttt{\#\#\#\ An\ even\ shorter\ section}.
 
-If you have installed them before, please ensure that R version \textgreater{} 4.1 as tidymass required, ohterwise download and install the \href{https://cran.r-project.org/mirrors.html}{latest version of R}.
+The \texttt{index.Rmd} file is required, and is also your first book chapter. It will be the homepage when you render the book.
 
-\textbf{Install R}
+\section{Render book}\label{render-book}
 
-Download \href{https://www.r-project.org/}{R} and install it.
+You can render the HTML version of this example book without changing anything:
 
-\includegraphics{figures/R_install.png}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Find the \textbf{Build} pane in the RStudio IDE, and
+\item
+  Click on \textbf{Build Book}, then select your output format, or select ``All formats'' if you'd like to use multiple formats from the same book source files.
+\end{enumerate}
 
-\textbf{Install Rstudio}
-
-Download \href{https://posit.co/download/rstudio-desktop/\#download}{Rstudio} and install it.
-
-\includegraphics{figures/Rstudio_install.png}
-
-\textbf{Open the Rstudio}
-
-\includegraphics{figures/Rstudio.png}
-
-\textbf{Setting up the suitable Mirror}
-
-You may set up the suitable mirror to accelerate R package downloads.
-
-Click ``Tools'' in the Rstudio, then click ``Global options'' and select ``Packages''. You may select mirror from TUNA Team if you are users from China.
-
-\includegraphics{figures/mirror.png}
-
-\section{Methods to install tidymass shinyapp}\label{methods-to-install-tidymass-shinyapp}
-
-Here we provide three different methods to install tidymass shinyapp: \textbf{R}, \textbf{Docker} and \textbf{Server}.
-
-\textbf{Install with R}
-
-First, you are recommended to install Tidymass with the following code. For more information and help document, please refer to \href{https://www.tidymass.org/}{Tidymass Website}
+Or build the book from the R console:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{remotes}\SpecialCharTok{::}\FunctionTok{install\_gitlab}\NormalTok{(}\StringTok{"tidymass/tidymass"}\NormalTok{)}
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-Second, install the necessary packages:
+To render this example to PDF as a \texttt{bookdown::pdf\_book}, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
+
+\section{Preview book}\label{preview-book}
+
+As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in ``Preview book'', or from the R console:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}remotes\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}remotes\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}writexl\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}writexl\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}Cairo\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}Cairo\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}tidyverse\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}tidyverse\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}shinyFiles\textquotesingle{}}\NormalTok{)) remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{\textquotesingle{}thomasp85/shinyFiles\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}shinyWidgets\textquotesingle{}}\NormalTok{)) remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"dreamRs/shinyWidgets"}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}shiny\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}shiny\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}shinyalert\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}shinyalert\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}bsicons\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}bsicons\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}hexbin\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}hexbin\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}bslib\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}bslib\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}plotly\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}plotly\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}colourpicker\textquotesingle{}}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{\textquotesingle{}colourpicker\textquotesingle{}}\NormalTok{);}
-\ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{\textquotesingle{}plantmdb\textquotesingle{}}\NormalTok{)) remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"xuebinzhang{-}lab/plantmdb"}\NormalTok{)  }\DocumentationTok{\#\# plant metabolomics database. for test use.}
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{serve\_book}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-Finally, install Tidymass shinyapp with the code:
+\chapter{Hello bookdown}\label{hello-bookdown}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{\textquotesingle{}tidymass/tidymass\_shiny\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (\texttt{\#}) per .Rmd file.
 
-To start the shiny app, run the code.
+\section{A section}\label{a-section}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(tidyverse)}
-\FunctionTok{library}\NormalTok{(tidymass)}
-\FunctionTok{library}\NormalTok{(tidymassshiny)}
-\FunctionTok{library}\NormalTok{(plantmdb) }\DocumentationTok{\#\# for test use}
-\FunctionTok{run\_tidymass\_shiny}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
+All chapter sections start with a second-level (\texttt{\#\#}) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
 
-You should be able to see:
+\subsection*{An unnumbered section}\label{an-unnumbered-section}
+\addcontentsline{toc}{subsection}{An unnumbered section}
 
-\includegraphics{figures/shinyapp.png}
+Chapters and sections are numbered by default. To un-number a heading, add a \texttt{\{.unnumbered\}} or the shorter \texttt{\{-\}} at the end of the heading, like in this section.
 
-To update the app to the newest version, you can run the code.
+\chapter{Cross-references}\label{cross}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{\textquotesingle{}tidymass/tidymass\_shiny\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+Cross-references make it easier for your readers to find and link to elements in your book.
 
-\textbf{Install with Docker}
+\section{Chapters and sub-chapters}\label{chapters-and-sub-chapters}
 
-\textbf{Install with Server}
-
-\chapter{Upstream data processing}\label{upstream-data-processing}
-
-To perform multiple analysis with Tidymass shinyapp, you need to upload files first, the demo data can be downloaded through \href{https://drive.google.com/file/d/10OmQjZApoqJcd163X5C67pij2yZGWHnF/view?usp=sharing}{Google Drive} or \href{https://pan.baidu.com/s/1QfwGN29dJ5mxtKmKUBo9NA?pwd=iacm}{BaiduNetdisk}.
-
-\includegraphics{figures/demo_data.png}
-
-\section{Data format converter}\label{data-format-converter}
-
-If your data is in raw format, you may first convert it to .mzML or .mzXML format using \href{https://proteowizard.sourceforge.io}{ProteoWizard}. Please note that ProteoWizard only support Windows OS, you may consider \href{https://massconverter.tidymass.org}{massconverter} if you don't use Windows OS.
-
-You can refer to the following parameter settings for ProteoWizard.
-
-\includegraphics{figures/ProteoWizard.png}
-
-\section{Methods to upload the files}\label{methods-to-upload-the-files}
-
-To begin with, you need to set up the working directory and upload the required files. Here we provide three options to do that.
-
-\textbf{Start with Ms file}:
-If you have raw data in the format like .mzML or mzXML. You can click on `Start with Ms file' to upload the file.
-
-\includegraphics{figures/mzXML.png}
-
-\textbf{Start with table file}: If your data is a post-peak metabolite expression matrix, you can click on the `Start with table file' button to upload the data. The sample table is as follows, and the first four columns must exist, with column names not to be changed.
-
-\includegraphics{figures/table_upload.png}
-
-\textbf{Start with massdataset object}: If your data is generated by Tidymass, you can choose the `Start with massdataset object' button and directly upload them.
-
-\includegraphics{figures/object_upload.png}
-
-\section{Project initiate}\label{project-initiate}
-
-Here are the steps you need to follow to initiate the project:
+There are two steps to cross-reference any heading:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Set working directory
+  Label the heading: \texttt{\#\ Hello\ world\ \{\#nice-label\}}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Leave the label off if you like the automated heading generated based on your heading title: for example, \texttt{\#\ Hello\ world} = \texttt{\#\ Hello\ world\ \{\#hello-world\}}.
+  \item
+    To label an un-numbered heading, use: \texttt{\#\ Hello\ world\ \{-\#nice-label\}} or \texttt{\{\#\ Hello\ world\ .unnumbered\}}.
+  \end{itemize}
 \item
-  Upload \texttt{sample\_info.csv} file
-\item
-  You may click the dropdown button and adjust the column names if there are any changes for them.
-\item
-  Click ``Initialize Project'' button and check the sample information.
+  Next, reference the labeled heading anywhere in the text using \texttt{\textbackslash{}@ref(nice-label)}; for example, please see Chapter \ref{cross}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If you prefer text as the link instead of a numbered reference use: \hyperref[cross]{any text you want can go here}.
+  \end{itemize}
 \end{enumerate}
 
-\includegraphics{figures/project_initiate.png}
+\section{Captioned figures and tables}\label{captioned-figures-and-tables}
 
-\section{Data import}\label{data-import}
+Figures and tables \emph{with captions} can also be cross-referenced from elsewhere in your book using \texttt{\textbackslash{}@ref(fig:chunk-label)} and \texttt{\textbackslash{}@ref(tab:chunk-label)}, respectively.
 
-\textbf{Upload Ms file}
+See Figure \ref{fig:nice-fig}.
 
-Before importing the data, please make sure the files are properly organized according to sample type, such as \texttt{QC} and \texttt{Subject}. Here is an example:
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(pressure, }\AttributeTok{type =} \StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
-\includegraphics{figures/MS1_files.png}
+\begin{figure}
 
-Click the dropdown button \textbf{Data import} and select \textbf{Start with MS file}.
+{\centering \includegraphics[width=0.8\linewidth,alt={Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases.}]{_main_files/figure-latex/nice-fig-1} 
 
-\includegraphics{figures/MS_start.png}
+}
 
-Then click \textbf{SELECT MS1 FOLDER} and choose the MS1 folder.
+\caption{Here is a nice figure!}\label{fig:nice-fig}
+\end{figure}
 
-\includegraphics{figures/select_ms.png}
+Don't miss Table \ref{tab:nice-tab}.
 
-Next, click \textbf{CHECK INPUT FILE} and a prompt will appear if the files have been successfully uploaded.
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
+  \FunctionTok{head}\NormalTok{(pressure, }\DecValTok{10}\NormalTok{), }\AttributeTok{caption =} \StringTok{\textquotesingle{}Here is a nice table!\textquotesingle{}}\NormalTok{,}
+  \AttributeTok{booktabs =} \ConstantTok{TRUE}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
-\includegraphics{figures/correct_prompt.png}
+\begin{table}
 
-After the files are ready for analysis, you can choose to set peak picking parameters yourself. Here are some important parameters:
+\caption{\label{tab:nice-tab}Here is a nice table!}
+\centering
+\begin{tabular}[t]{rr}
+\toprule
+temperature & pressure\\
+\midrule
+0 & 0.0002\\
+20 & 0.0012\\
+40 & 0.0060\\
+60 & 0.0300\\
+80 & 0.0900\\
+\addlinespace
+100 & 0.2700\\
+120 & 0.7500\\
+140 & 1.8500\\
+160 & 4.2000\\
+180 & 8.8000\\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\begin{itemize}
-\tightlist
-\item
-  ppm: Peak detection ppm.
-\item
-  peakwidth: Peak width. It is dependent on your column and LC system.
-\item
-  snthresh: Signal to noise threshold.
-\item
-  noise: Noise cutoff.
-\item
-  threads: The core number for performing.
-\end{itemize}
+\chapter{Parts}\label{parts}
 
-For more details, please refer to \href{https://www.tidymass.org/massprocesser/articles/raw_data_processing.html}{massprocesser}.
+You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
 
-If you want to use the recommended parameters, just click \textbf{Start} to proceed with further optimization. This will find the best ppm cutoff and run with it to perform the optimization.
+Add a numbered part: \texttt{\#\ (PART)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
 
-Finally, click \textbf{Start peak picking} and get the results.
+Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
 
-\textbf{Upload table file}
+Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
 
-Click the dropdown button \textbf{Data import} and select \textbf{Start with table file}.
+\chapter{Footnotes and citations}\label{footnotes-and-citations}
 
-\includegraphics{figures/table_start.png}
+\section{Footnotes}\label{footnotes}
 
-Then click \textbf{BROWSE} and select the csv table. Next, click \textbf{INPUT FILE SUMMARY} and you will see the statistics of input file, such as \texttt{QC\ Samples}, \texttt{Subject\ Samples} and \texttt{Total\ Features}.
+Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}. Like this one \footnote{This is a footnote.}.
 
-\includegraphics{figures/table_statistics.png}
+\section{Citations}\label{citations}
 
-If all the check have passed, click \textbf{Generate massdataset object} to obtain massdataset objects for both positive and negative modes.
+Reference items in your bibliography file(s) using \texttt{@key}.
 
-\includegraphics{figures/select_table.png}
+For example, we are using the \textbf{bookdown} package \citep{R-bookdown} (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015} (this citation was added manually in an external file book.bib).
+Note that the \texttt{.bib} files need to be listed in the index.Rmd with the YAML \texttt{bibliography} key.
 
-\textbf{Upload mass\_dataset file}
+The RStudio Visual Markdown Editor can also make it easier to insert citations: \url{https://rstudio.github.io/visual-markdown-editing/\#/citations}
 
-If you already have massdataset objects generated by Tidymass, you can simply upload them. Upload objects for positive and negative modes separately and click \textbf{Check input}
+\chapter{Blocks}\label{blocks}
 
-\includegraphics{figures/object_page.png}
+\section{Equations}\label{equations}
 
-\section{Data quaily assessment}\label{data-quaily-assessment}
+Here is an equation.
 
-To have an overall understanding and assessment of the data, you can select \textbf{Overview} and click \textbf{START} to generate multiple plots, including peak distribution, missing value summary and missing value in samples etc.
+\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  \label{eq:binom}
+\end{equation}
 
-Here you can also adjust parameters and download these plots.
+You may refer to using \texttt{\textbackslash{}@ref(eq:binom)}, like see Equation \eqref{eq:binom}.
 
-Multiple plots can be generated, including peak distribution plots of for two modes
+\section{Theorems and proofs}\label{theorems-and-proofs}
 
-\includegraphics{figures/Overview1.png}
+Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem \ref{thm:tri}.
 
-\includegraphics{figures/Overview2.png}
+\begin{theorem}
+\protect\hypertarget{thm:tri}{}\label{thm:tri}For a right triangle, if \(c\) denotes the \emph{length} of the hypotenuse
+and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
+\[a^2 + b^2 = c^2\]
+\end{theorem}
 
-\section{Data cleaning}\label{data-cleaning}
+Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
 
-Before metabolite annotation, it's necessary to perform \textbf{data cleaning} as various bias may exist in sample preparation and data acquisition. It can be divided into different steps such as noisy feature removal and outlier samples removal. For more details, please refer to \href{https://masscleaner.tidymass.org/}{masscleaner}.
+\section{Callout blocks}\label{callout-blocks}
 
-\textbf{Remove noisy metabolic features}
+The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
 
-The first step is removing noisy metabolic features. Here we choose to remove variables who have MV in more than 20\% QC samples and in at lest 50\% samples in control group or case group, so the \textbf{MV cutoff of QC samples (\%)} has been set as 20 and \textbf{MV cutoff (\%)} has been set as 50.
+\chapter{Sharing your book}\label{sharing-your-book}
 
-Click \textbf{Start} to remove these noisy metabolites.
+\section{Publishing}\label{publishing}
 
-Next, you can visualize the MV percentage of samples for \texttt{QC\ group}, \texttt{Subject\ group} or both of them by click \textbf{Show plot}.
+HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
 
-\includegraphics{figures/noisy_metabolites.png}
+\section{404 pages}\label{pages}
 
-\textbf{Filter outlier samples}
+By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
 
-When analyzing large cohorts, outlier samples can be a serious problem. In this step, we will filter these outlier samples.
+\section{Metadata for sharing}\label{metadata-for-sharing}
 
-Before filtering outlier samples, you can click \textbf{Start} above to show the plot for Missing value in samples and PCA plot.
+Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
 
-\includegraphics{figures/outliers.png}
+This \texttt{gitbook} uses the same social sharing data across all chapters in your book- all links shared will look the same.
 
-In Tidymass shinyapp, we provide multiple options to filter outliers, you may select different strategies according to your requirement. For more information, please refer to this \href{https://privefl.github.io/blog/detecting-outlier-samples-in-pca/}{blog}.
+Specify your book's source repository on GitHub using the \texttt{edit} key under the configuration options in the \texttt{\_output.yml} file, which allows users to suggest an edit by linking to a chapter's source file.
 
-For ``By tidymass'' strategy, four remove outlier conditions are provided: according to NA (according\_to\_na), accoriding to standard deviation for principal component (pc\_sd), according to mean abosolute deviation for principal component (pc\_mad) and according to distance (according\_to\_distance).
+Read more about the features of this output format here:
 
-\includegraphics{figures/outliers_tidymass.png}
+\url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
 
-For ``By myself'' strategy, the outliers for both positive and negative modes are set to be ``none''.
+Or use:
 
-Click \textbf{Start} below to filter outlier samples.
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
+\end{Highlighting}
+\end{Shaded}
 
-\textbf{Missing value imputation}
-
-Here you can select many different methods for missing value imputation, including knn, missforest (mf) and ppca etc.
-
-\textbf{Parameters}
-
-For knn
-
-\begin{itemize}
-\tightlist
-\item
-  k: the parameters can be modified include number of neighbors. Defaults to 10.
-\item
-  rowmax: maximum row missing proportion. Defaults to 0.5.
-\item
-  colmax: maximum column missing proportion. Defaults to 0.8.
-\item
-  maxp: maximum prediction proportion. Defaults to 1500.
-\item
-  rng.seed: random number generator seed.
-\end{itemize}
-
-For missForest (rf)
-
-\begin{itemize}
-\tightlist
-\item
-  maxiter: the parameters include maximum iterations. Defaults to 10.
-\item
-  ntree: number of trees. Defaults to 100.
-\item
-  decreasing: whether to interpolate missing values in order from most to least number of missing values. Defaults to FALSE.
-\end{itemize}
-
-For ppca
-
-\begin{itemize}
-\tightlist
-\item
-  nPcs: the parameters can be modified include number of principal components. Defaults to 2.
-\item
-  maxSteps: maximum steps for iterations. Defaults to 100.
-\item
-  threshold: convergence threshold. Defaults to 1e-04.
-\end{itemize}
-
-\includegraphics{figures/imputation1.png}
-
-If the method has been chosen and all the parameters have been set, click \textbf{START} to perform missing value imputation.
-
-\includegraphics{figures/imputation2.png}
-
-\textbf{Data normalization and integration}
-
-To remove unwanted analytical variations and integrate multiple batches forming an integral data set for subsequent statistical analysis, we need to perform data normalization and integration.
-
-Here we provide several methods to be selected, including QC sample-based data normalization like \texttt{svr} and \texttt{loess} and sample-wise method like \texttt{pqn}, \texttt{median}, \texttt{mean} and \texttt{total} intensity normalization.
-
-\includegraphics{figures/normalization_methods.png}
-
-\textbf{Parameters}
-
-\begin{itemize}
-\tightlist
-\item
-  keep\_scale: whether to keep the original scale of the data during the data standardization process. Defaults to TRUE.
-\item
-  optimization: whether to enable optimization steps in the standardization process. Defaults to TRUE.
-\item
-  pqn\_reference: the reference value selected for using the Probabilistic Quotient Normalization method. Defaults to median.
-\item
-  begin\_value: the start value for parameter search range. Defaults to 0.5.
-\item
-  end\_value: the end value for parameter search range. Defaults to 1.
-\item
-  step\_value: the increment at each step of the parameter search. Defaults to 0.2.
-\item
-  multiple: the standardized factors used to control multiples. Defaults to 1.
-\item
-  threads: the number of threads for normalization. Defaults to 1.
-\end{itemize}
-
-Click \textbf{Start analysis} to perform the normalization and integration (The step may take some time, please be patient). Then click \textbf{Show plot} to visualize the difference before and after the normalization.
-
-\includegraphics{figures/normaliztion.png}
-
-\chapter{Downstream data processing}\label{downstream-data-processing}
-
-\section{Metabolite annotation}\label{metabolite-annotation}
-
-Metabolite annotation can be performed based on in-house and available open-source databases. To begin with, you need to click \textbf{Select MS2 folder} and import prepared MS2 data. These files should be in the format of ``.mgf'', and they should be stored separately for negative and positive modes.
-
-\includegraphics{figures/ms2_folder.png}
-
-\textbf{Parameters}
-
-\begin{itemize}
-\tightlist
-\item
-  column: A character vector specifying the column types. Default is ``rp''.
-\item
-  ms1.ms2.match.mz.tol: Numeric, the m/z tolerance for matching MS1 and MS2. Default is 15.
-\item
-  ms1.ms2.match.rt.tol: Numeric, the retention time tolerance for matching MS1 and MS2. Default is 30.
-\end{itemize}
-
-Once you have set the parameters, click \textbf{Start} to import MS2 data.
-
-\includegraphics{figures/metabolite_annotation.png}
-
-Next, you can choose suitable parameters for metabolite annotation.
-
-\textbf{Parameters}
-
-\begin{itemize}
-\tightlist
-\item
-  ms1.match.ppm: A numeric value specifying the mass accuracy threshold for MS1 matching in parts per million (ppm). Defaults to 25.
-\item
-  ms2.match.ppm: A numeric value specifying the mass accuracy threshold for MS2 (Fragment ion) matching in ppm. Defaults to 30.
-\item
-  rt.match.tol: A numeric value specifying the retention time matching tolerance in seconds. Defaults to 30.
-\item
-  candidate.num: A numeric value specifying the number of top candidates to retain per feature. Defaults to 3.
-\item
-  column: A character string specifying the chromatographic column type, either ``rp'' (reverse phase) or ``hilic''. Defaults to ``rp''.
-\item
-  threads: An integer specifying the number of threads to use for parallel processing. Defaults to 3.
-\end{itemize}
-
-We need necessary MS2 databases for metabolite annotation, and here we provide some common in-house databases.
-
-More MS2 compound databases can be downloaded from \href{https://www.tidymass.org/databases/}{Tidymass Website}. After the download is complete, place them in a new folder and click \textbf{Choose folder}.
-
-You can also use Tidymass to build your own database, please be noted that the format should be in ``.rda''.
-
-\includegraphics{figures/metabolite_annotation2.png}
-
-\section{Annotation filtering}\label{annotation-filtering}
-
-The annotation results are assigned conﬁdence levels according to MSI (in-house database, level 1; public MS2 database, level 2; MS1 database, level 3).
-
-After obtaining annotation results, you can choose how to keep multiple annotations, how to remove redundancy and how to keep annotation levels.
-
-Click \textbf{Adduct for level 3 annotation} and select suitable models and methods, then click \textbf{START} to perform annotation filtering.
-
-\includegraphics{figures/annotation_filtering.png}
-
-\section{Merge data}\label{merge-data}
-
-\section{Differential Accumulated Metabolites (DAM)}\label{differential-accumulated-metabolites-dam}
-
-\section{Enrichment}\label{enrichment}
-
-\section{Feature-based Pathway Analysis (FPA)}\label{feature-based-pathway-analysis-fpa}
-
-\chapter{References}\label{references}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Shen, X., Yan, H., Wang, C. et al.~TidyMass an object-oriented reproducible analysis framework for LC--MS data. Nat Commun 13, 4365 (2022). \url{https://doi.org/10.1038/s41467-022-32155-w}
-\item
-  \url{https://www.tidymass.org/}
-\item
-  \url{https://github.com/tidymass/tidymass_shiny}
-\end{enumerate}
 
   \bibliography{book.bib,packages.bib}
 
